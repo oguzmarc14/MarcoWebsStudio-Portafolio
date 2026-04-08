@@ -1,0 +1,101 @@
+---
+import { SiAstro, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  FaBolt,
+  FaMobileAlt,
+  FaChartLine,
+  FaSearch,
+  FaUsers,
+} from "react-icons/fa";
+
+interface Props {
+  titulo: string;
+  imagen: string;
+  altImagen: string;
+  srcImagen: string;
+  icono?: string;
+  textoBoton: string;
+  srcBoton: string;
+  srcFondo: string;
+}
+
+const { titulo, imagen, altImagen, srcImagen, textoBoton, srcBoton } =
+  Astro.props as Props;
+---
+
+<article
+  class:list={[
+    "group",
+    "relative",
+    "bg-gray-950/20",
+    "border-2",
+    "border-gray-400/40",
+    "rounded-2xl",
+    "p-8",
+    "hover:-translate-y-2",
+    "hover:border-gray-400/60",
+    "hover:shadow-[0_0_30px_rgba(139,92,246,0.18)]",
+    "duration-300",
+    "overflow-hidden",
+  ]}
+>
+  <!-- GLOW -->
+  <div
+    class="absolute -inset-10 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100 bg-blue-700/10 pointer-events-none"
+  ></div>
+
+  <!-- CONTENIDO -->
+  <div class="relative z-10">
+
+    <h3 class:list={["text-white", "text-center", "font-family", "text-4xl"]}>
+      {titulo}
+    </h3>
+
+    <img src={srcImagen} alt={altImagen} />
+
+    <!-- BENEFICIOS -->
+    <div class="flex justify-center gap-4 text-sm text-white/80 mb-3 mt-5">
+      <div class="flex items-center gap-1">
+        <FaBolt class="text-violet-300" />
+        <span>Rápido</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <FaMobileAlt class="text-violet-300" />
+        <span>Responsive</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <FaChartLine class="text-violet-300" />
+        <span>Clientes</span>
+      </div>
+    </div>
+
+    <!-- TECNOLOGÍAS -->
+    <div class="flex justify-center gap-3 text-white/40 text-2xl mb-6 mt-6">
+      <SiAstro />
+      <SiTailwindcss />
+      <SiTypescript />
+    </div>
+
+    <!-- BOTÓN -->
+    <a
+      class:list={[
+        "text-white",
+        "flex",
+        "mx-auto",
+        "px-4",
+        "py-2",
+        "font-family",
+        "bg-white/20",
+        "w-fit",
+        "rounded-2xl",
+        "hover:bg-white/30",
+        "hover:scale-105",
+        "duration-300",
+      ]}
+      href={srcBoton}
+    >
+      {textoBoton}
+    </a>
+
+  </div>
+</article>

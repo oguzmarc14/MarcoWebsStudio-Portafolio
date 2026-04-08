@@ -1,0 +1,21 @@
+---
+interface Props {
+  textBoton1: string;
+  botonPrincipal?: boolean;
+  href: string;
+}
+
+const { textBoton1, botonPrincipal, href } = Astro.props as Props;
+---
+
+<a
+  href={href}
+    class:list={[ "mt-3",
+      botonPrincipal
+        ? "bg-gray text-white rounded-2xl font-family px-2 py-2 border-2 border-white hover:scale-105 hover:bg-gray-600 duration-300"
+        : "bg-gray text-white rounded-2xl font-family px-2 py-2 border-2 border-white/50 hover:scale-105 hover:bg-gray-950 duration-300"
+    ]}
+  >
+    {textBoton1}
+    
+</a>

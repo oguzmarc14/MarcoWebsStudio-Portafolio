@@ -1,0 +1,52 @@
+---
+import CardProyectos from "../ui/CardProyectos.astro";
+
+const cardProyectos = [
+  {
+    imagen: "/public/Noe.png",
+    altImagen: "",
+    titulo: "Agencia De Terrenos",
+    descripcion: "Descripción del proyecto 1",
+    enlace: "#",
+
+  },
+  {
+    imagen: "/public/Gibs.png",
+    altImagen: "",
+    titulo: "Venta De Baterias",
+    descripcion: "Descripción del proyecto 2",
+    enlace: "#",
+  },
+  {
+    imagen: "/public/Alondra.png",
+    altImagen: "Proyecto 3",
+    titulo: "Nutriologa Alondra",
+    descripcion: "Descripción del proyecto 3",
+    enlace: "#",
+  },
+];
+---
+
+<section
+  class:list={["bg-linear-to-b", "from-black", "via-[#060514]", "to-[#040d16]", "relative", "h-380"]}
+  style="background: url('/public/fondo-proyectos.png') center bottom/cover no-repeat;"
+>
+  <div class="absolute inset-0 bg-black/90 pointer-events-none z-0"></div>
+
+  <div class="relative z-10">
+    <h2 class="text-4xl font-bold text-center mb-10 text-white font-family pt-20">Proyectos Destacados</h2>
+    <div class="container mx-auto grid grid-rows-2 grid-cols-2 gap-8">
+      {cardProyectos.map((proyecto) => (
+        <CardProyectos
+          titulo={proyecto.titulo}
+          imagen={proyecto.imagen}
+          altImagen={proyecto.altImagen}
+          srcImagen={proyecto.imagen}
+          textoBoton="Ver Proyecto"
+          srcBoton={proyecto.enlace}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+

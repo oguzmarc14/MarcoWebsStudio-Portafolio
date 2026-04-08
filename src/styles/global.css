@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family: "Bungee", sans-serif;
+  --font-fondo: "Tourney", sans-serif;
+
+}

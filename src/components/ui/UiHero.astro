@@ -1,0 +1,58 @@
+---
+import Boton from "./Boton.astro";
+
+interface Props {
+  imagen: string;
+  altImagen: string;
+}
+
+const { imagen, altImagen } = Astro.props as Props;
+---
+
+<header
+  class:list={[
+    "bg-linear-to-r",
+    "from-[#243b55]",
+    "via-[#1f2f45]",
+    "to-[#141e30]",
+    "relative",
+    "overflow-hidden",
+    "h-screen",
+  ]}
+>
+  <div class:list={["absolute", "inset-0", "w-full", "h-full"]}>
+    <img src={imagen} alt={altImagen} class="w-full h-auto object-cover" />
+    <div class:list={["absolute", "inset-0", "bg-black/20", "opacity-0"]}></div>
+  </div>
+  <div
+    class:list={[
+      "relative",
+      "z-10",
+      "flex",
+      "h-full",
+      "w-full",
+      "flex",
+      "flex-col",
+      "ml-10",
+      "justify-center",
+    ]}
+  >
+    <h1 class:list={["text-white", "relative", "text-8xl", "font-family"]}>
+      Marco<br />Webs Studio
+    </h1>
+    <h2 class:list={["text-gray-400/80", "ml-1", "font-family", "text-3xl", "w-2/7"]}>
+      Websites modernas para negocios que quieren crecer
+    </h2>
+    <slot>
+      <div class:list={["flex", "gap-2"]}>
+        <Boton textBoton1="Cotizar Por Whatsapp" href="#home" botonPrincipal />
+        <Boton textBoton1="Proyectos" href="#hom" botonPrincipal={false} />
+      </div>
+    <div class:list={["flex", "items-center", "gap-4", "mt-10", "ml-2"]}>
+        <a href=""><i class="fa-brands fa-instagram text-white text-4xl hover:scale-110 duration-300"></i></a>
+        <a href=""><i class="fa-brands fa-facebook text-white text-3xl hover:scale-110 duration-300"></i></a>
+        <a href=""><i class="fa-brands fa-tiktok text-white text-3xl hover:scale-110 duration-300"></i></a>
+    </div>
+    </slot>
+  </div>
+</header>
