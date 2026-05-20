@@ -1,0 +1,15 @@
+{
+  "name": "Marco Webs Studio",
+  "short_name": "MarcoWebs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
