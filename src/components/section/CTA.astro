@@ -2,24 +2,91 @@
 import { whatsappUrl } from '../../data/landing';
 ---
 
-<section class="relative px-4 py-24 sm:px-6 lg:px-8" id="contacto" data-reveal>
-	<div class="mx-auto max-w-7xl">
-		<div class="premium-surface premium-surface-strong relative rounded-[2rem] bg-[linear-gradient(135deg,rgba(8,15,31,0.96),rgba(5,8,22,0.96))] p-8 sm:p-12 lg:p-16 animate-pulse-glow" data-reveal>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.09),transparent_24%)]"></div>
-			<div class="relative grid gap-8 lg:grid-cols-[1.4fr_0.6fr] lg:items-center">
-				<div class="space-y-4">
-					<p class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200/75">CTA</p>
-					<h2 class="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">Tu negocio ya tiene clientes, ahora necesita una presencia digital profesional.</h2>
-					<p class="max-w-2xl text-slate-300">Si quieres una web que se vea premium, explique mejor tu valor y convierta mensajes en oportunidades, este es el siguiente paso.</p>
-				</div>
+<section class="relative px-4 py-28 sm:px-6 lg:px-8" id="contacto">
 
-				<div class="flex lg:justify-end" data-reveal style="--reveal-delay: 120ms;">
-					<a href={whatsappUrl} class="premium-button inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 text-base font-semibold">
-						<i class="fa-brands fa-whatsapp text-xl"></i>
-						Cotizar por WhatsApp
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Deep aurora background para toda la sección -->
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 rounded-none"
+            style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(34,211,238,0.07), transparent 65%);"></div>
+        <div class="absolute left-1/4 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full animate-aurora"
+            style="background: radial-gradient(circle, rgba(34,211,238,0.1), transparent 60%); filter: blur(90px);"></div>
+        <div class="absolute right-1/4 bottom-0 h-[35rem] w-[35rem] translate-x-1/2 rounded-full animate-aurora-alt"
+            style="background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 60%); filter: blur(80px);"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl">
+        <!-- CTA card -->
+        <div class="relative overflow-hidden rounded-[2rem] px-8 py-16 sm:px-16 sm:py-20 lg:py-24"
+            style="background: linear-gradient(135deg, rgba(8,17,32,0.95) 0%, rgba(5,8,22,0.98) 100%); border: 1px solid rgba(34,211,238,0.2); box-shadow: 0 0 120px rgba(34,211,238,0.08), 0 48px 120px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.06);">
+
+            <!-- Inner corner glows -->
+            <div class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full"
+                style="background: radial-gradient(circle, rgba(34,211,238,0.15), transparent 65%); filter: blur(50px);"></div>
+            <div class="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full"
+                style="background: radial-gradient(circle, rgba(6,182,212,0.12), transparent 65%); filter: blur(50px);"></div>
+
+            <!-- Grid texture inside card -->
+            <div class="pointer-events-none absolute inset-0 opacity-[0.03]"
+                style="background-image: linear-gradient(rgba(148,163,184,1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+            <!-- Noise -->
+            <div class="noise-overlay rounded-[2rem]"></div>
+
+            <!-- Content: centered -->
+            <div class="relative text-center space-y-8" data-reveal>
+
+                <!-- Eyebrow -->
+                <div class="flex items-center justify-center gap-3">
+                    <div class="h-px w-12 rounded-full" style="background: linear-gradient(90deg, transparent, rgba(34,211,238,0.5));"></div>
+                    <p class="premium-chip inline-flex rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-200/90">
+                        Siguiente paso
+                    </p>
+                    <div class="h-px w-12 rounded-full" style="background: linear-gradient(90deg, rgba(34,211,238,0.5), transparent);"></div>
+                </div>
+
+                <!-- Main headline -->
+                <div class="space-y-3 max-w-4xl mx-auto" data-reveal style="--reveal-delay: 80ms;">
+                    <h2 class="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                        Tu negocio ya tiene
+                        <span class="gradient-text"> clientes.</span>
+                        <br />
+                        <span class="text-white/90">Ahora necesita</span>
+                        <br />
+                        <span class="gradient-text glow-text">presencia digital.</span>
+                    </h2>
+                </div>
+
+                <!-- Sub -->
+                <p class="max-w-xl mx-auto text-base leading-7 text-slate-400 sm:text-lg" data-reveal style="--reveal-delay: 140ms;">
+                    Si quieres una web que se vea premium, explique tu valor y convierta mensajes en oportunidades, este es el siguiente paso.
+                </p>
+
+                <!-- CTA Button -->
+                <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center" data-reveal style="--reveal-delay: 200ms;">
+                    <a href={whatsappUrl}
+                        class="premium-button inline-flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-base font-black animate-pulse-glow">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Cotizar por WhatsApp
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Trust signals -->
+                <div class="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs text-slate-500" data-reveal style="--reveal-delay: 260ms;">
+                    <div class="flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-check text-cyan-400/60"></i>
+                        Sin compromiso
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <i class="fa-solid fa-bolt text-cyan-400/60"></i>
+                        Respuesta rápida
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <i class="fa-solid fa-star text-cyan-400/60"></i>
+                        Calidad garantizada
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

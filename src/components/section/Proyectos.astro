@@ -3,42 +3,98 @@ import { projectItems } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section id="proyectos" class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
-	<div class="mx-auto max-w-7xl">
-		<SectionHeading
-			eyebrow="Proyectos destacados"
-			title="Trabajo reciente con enfoque en conversión y presencia premium."
-			description="Cada proyecto busca claridad, confianza visual y una ruta directa para que el negocio reciba contactos reales."
-		/>
+<section id="proyectos" class="relative px-4 py-28 sm:px-6 lg:px-8">
 
-		<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-			{projectItems.map((project) => (
-				<article class="premium-surface group overflow-hidden rounded-2xl bg-white/5 p-4" data-reveal style="--reveal-delay: 90ms;">
-					<div class="relative overflow-hidden rounded-2xl border border-white/10">
-						<img src={project.image} alt={project.alt} class="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
-						<div class="absolute inset-0 bg-linear-to-t from-[#050816] via-transparent to-transparent"></div>
-					</div>
+    <!-- Ambient glow left -->
+    <div class="pointer-events-none absolute left-0 top-1/2 h-[40rem] w-[30rem] -translate-y-1/2 rounded-full opacity-20"
+        style="background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 65%); filter: blur(90px);"></div>
 
-					<div class="space-y-4 p-3 pt-5">
-						<div class="flex flex-wrap gap-2">
-							{project.badges.map((badge) => (
-								<span class="premium-tag rounded-full px-3 py-1 text-xs font-medium text-cyan-100">{badge}</span>
-							))}
-						</div>
+    <div class="relative mx-auto max-w-7xl">
+        <SectionHeading
+            eyebrow="Proyectos destacados"
+            title="Trabajo reciente con enfoque en conversión y presencia premium."
+            description="Cada proyecto busca claridad, confianza visual y una ruta directa para que el negocio reciba contactos reales."
+        />
 
-						<div class="space-y-2">
-							<h3 class="text-xl font-semibold text-white">{project.title}</h3>
-							<p class="text-sm leading-6 text-slate-300">{project.description}</p>
-						</div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projectItems.map((project, i) => (
+                <article
+                    class="project-card group relative overflow-hidden rounded-2xl transition-all duration-500"
+                    style="background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.07);"
+                    data-reveal
+                    style={`--reveal-delay: ${i * 100}ms;`}
+                >
+                    <!-- Hover border glow -->
+                    <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        style="box-shadow: inset 0 0 0 1px rgba(34,211,238,0.3), 0 0 60px rgba(34,211,238,0.08);"></div>
 
-						<a href={project.href} class="premium-button-secondary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white">
-							Ver proyecto
-							<i class="fa-solid fa-arrow-right text-xs text-cyan-200"></i>
-						</a>
-					</div>
-				</article>
-			))}
-		</div>
-	</div>
+                    <!-- ── BROWSER MOCKUP ──────────────── -->
+                    <div class="relative overflow-hidden rounded-t-2xl">
+
+                        <!-- Browser bar -->
+                        <div class="browser-bar">
+                            <div class="browser-dot" style="background: #ff5f56;"></div>
+                            <div class="browser-dot" style="background: #ffbd2e;"></div>
+                            <div class="browser-dot" style="background: #27c93f;"></div>
+                            <div class="ml-3 flex h-5 flex-1 items-center rounded-md px-2 text-[10px] text-slate-500"
+                                style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+                                {project.href.replace('https://', '')}
+                            </div>
+                        </div>
+
+                        <!-- Image with cinematic overlay -->
+                        <div class="relative overflow-hidden" style="height: 220px;">
+                            <img
+                                src={project.image}
+                                alt={project.alt}
+                                class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                                loading="lazy"
+                            />
+
+                            <!-- Dark gradient overlay always present -->
+                            <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 30%, rgba(5,8,22,0.85) 100%);"></div>
+
+                            <!-- Hover overlay with info -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-400 group-hover:opacity-100"
+                                style="background: rgba(5,8,22,0.5); backdrop-filter: blur(2px);">
+                                <a href={project.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="premium-button inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold translate-y-4 transition-transform duration-400 group-hover:translate-y-0">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                    Ver en vivo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── CARD CONTENT ──────────────── -->
+                    <div class="p-5 pt-4">
+
+                        <!-- Badges -->
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            {project.badges.map((badge) => (
+                                <span class="premium-tag rounded-full px-2.5 py-1 text-[11px] font-semibold text-cyan-200/80">
+                                    {badge}
+                                </span>
+                            ))}
+                        </div>
+
+                        <!-- Title + description -->
+                        <h3 class="text-lg font-bold text-white">{project.title}</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-400">{project.description}</p>
+
+                        <!-- View link -->
+                        <a href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all duration-200 hover:text-cyan-300 hover:gap-3">
+                            Ver proyecto
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </div>
 </section>
-

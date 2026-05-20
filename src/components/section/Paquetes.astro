@@ -1,35 +1,129 @@
 ---
-import { packageItems } from '../../data/landing';
+import { packageItems, whatsappUrl } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section id="paquetes" class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
-	<div class="mx-auto max-w-7xl">
-		<SectionHeading
-			eyebrow="Paquetes"
-			title="Opciones pensadas para distintos niveles de negocio."
-			description="Elige una base clara y escalable. Si tu proyecto necesita algo más específico, también se puede ajustar."
-		/>
+<section id="paquetes" class="relative px-4 py-28 sm:px-6 lg:px-8">
 
-		<div class="grid gap-6 xl:grid-cols-3">
-			{packageItems.map((item) => (
-				<article class:list={['premium-surface relative rounded-2xl p-6 transition hover:-translate-y-1', item.featured ? 'premium-surface-strong bg-cyan-400/10' : 'bg-white/5']} data-reveal style="--reveal-delay: 90ms;">
-					{item.featured && <div class="premium-button absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-semibold">Más solicitado</div>}
-					<p class="text-sm font-medium uppercase tracking-[0.28em] text-cyan-200/70">{item.title}</p>
-					<p class="mt-3 text-3xl font-semibold text-white">{item.price}</p>
-					<p class="mt-3 text-slate-300">{item.description}</p>
-					<ul class="mt-6 space-y-3 text-sm text-slate-200">
-						{item.includes.map((include) => (
-							<li class="flex items-center gap-3">
-								<span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300">
-									<i class="fa-solid fa-check text-[10px]"></i>
-								</span>
-								{include}
-							</li>
-						))}
-					</ul>
-				</article>
-			))}
-		</div>
-	</div>
+    <!-- Ambient glow center -->
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25"
+        style="background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 65%); filter: blur(100px);"></div>
+
+    <div class="relative mx-auto max-w-7xl">
+        <SectionHeading
+            eyebrow="Paquetes"
+            title="Opciones pensadas para distintos niveles de negocio."
+            description="Elige una base clara y escalable. Si tu proyecto necesita algo más específico, también se puede ajustar."
+        />
+
+        <div class="grid gap-6 xl:grid-cols-3 xl:items-start">
+            {packageItems.map((item, i) => (
+                <article
+                    class:list={[
+                        'pricing-card group relative overflow-hidden rounded-2xl p-7 transition-all duration-500',
+                        item.featured
+                            ? 'featured-card'
+                            : ''
+                    ]}
+                    style={item.featured
+                        ? 'background: linear-gradient(160deg, rgba(34,211,238,0.1) 0%, rgba(6,182,212,0.04) 100%); border: 1px solid rgba(34,211,238,0.28); box-shadow: 0 0 80px rgba(34,211,238,0.1), 0 32px 80px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.08);'
+                        : 'background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 24px 60px rgba(2,6,23,0.4);'}
+                    data-reveal
+                    style={`--reveal-delay: ${i * 100}ms;`}
+                >
+                    <!-- Featured: animated border glow -->
+                    {item.featured && (
+                        <div class="pointer-events-none absolute inset-0 rounded-2xl border-glow-rotate opacity-70"></div>
+                    )}
+
+                    <!-- Featured: blob luminoso de fondo -->
+                    {item.featured && (
+                        <div class="pointer-events-none absolute -top-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full animate-pulse-glow"
+                            style="background: radial-gradient(circle, rgba(34,211,238,0.2), transparent 65%); filter: blur(40px);"></div>
+                    )}
+
+                    <!-- Badge "Más solicitado" -->
+                    {item.featured && (
+                        <div class="absolute right-5 top-5">
+                            <div class="premium-button relative overflow-hidden rounded-full px-3.5 py-1.5 text-[11px] font-bold">
+                                <i class="fa-solid fa-star mr-1 text-[10px]"></i>
+                                Más solicitado
+                            </div>
+                        </div>
+                    )}
+
+                    <!-- Tier label -->
+                    <p class="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300/70">{item.title}</p>
+
+                    <!-- Price -->
+                    <div class="mt-4 space-y-1">
+                        <p class:list={[
+                            'text-4xl font-black leading-none tracking-tight',
+                            item.featured ? 'gradient-text' : 'text-white'
+                        ]}>
+                            {item.price.replace('desde ', '')}
+                        </p>
+                        <p class="text-xs text-slate-500">precio estimado · pago único</p>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="mt-4 text-sm leading-6 text-slate-400 border-t border-white/5 pt-4">{item.description}</p>
+
+                    <!-- Features list -->
+                    <ul class="mt-5 space-y-2.5">
+                        {item.includes.map((include) => (
+                            <li class="flex items-start gap-3 text-sm text-slate-300">
+                                <span class:list={[
+                                    'mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-[10px]',
+                                    item.featured
+                                        ? 'bg-cyan-400/20 text-cyan-300 border border-cyan-400/30'
+                                        : 'bg-emerald-400/12 text-emerald-300'
+                                ]}>
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                {include}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <!-- CTA -->
+                    <div class="mt-8">
+                        <a href={whatsappUrl}
+                            class:list={[
+                                'w-full inline-flex items-center justify-center gap-2.5 rounded-xl px-5 py-3.5 text-sm font-bold transition-all duration-300',
+                                item.featured
+                                    ? 'premium-button'
+                                    : 'premium-button-secondary'
+                            ]}>
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            Cotizar este paquete
+                        </a>
+                    </div>
+                </article>
+            ))}
+        </div>
+
+        <!-- Nota final -->
+        <p class="mt-10 text-center text-sm text-slate-500" data-reveal style="--reveal-delay: 200ms;">
+            ¿Tienes algo más específico en mente?
+            <a href={whatsappUrl} class="ml-1 text-cyan-400 transition hover:text-cyan-300">Escríbeme directamente →</a>
+        </p>
+    </div>
 </section>
+
+<style>
+    .featured-card {
+        transform: scale(1.02);
+    }
+
+    @media (max-width: 1280px) {
+        .featured-card {
+            transform: scale(1);
+        }
+    }
+
+    .featured-card:hover {
+        transform: scale(1.02) translateY(-6px) !important;
+        box-shadow: 0 0 100px rgba(34,211,238,0.16), 0 40px 100px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    }
+</style>

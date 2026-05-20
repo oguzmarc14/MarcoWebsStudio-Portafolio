@@ -3,24 +3,50 @@ import { benefitItems } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section id="beneficios" class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
-	<div class="mx-auto max-w-7xl">
-		<SectionHeading
-			eyebrow="Beneficios"
-			title="Una página que se ve bien, carga rápido y ayuda a cerrar más clientes."
-			description="La experiencia visual acompaña el mensaje comercial para que tu negocio no solo se vea moderno, sino también confiable y útil."
-		/>
+<section id="beneficios" class="relative px-4 py-28 sm:px-6 lg:px-8">
 
-		<div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-			{benefitItems.map((item) => (
-				<article class="premium-surface group rounded-2xl bg-white/5 p-5" data-reveal style="--reveal-delay: 90ms;">
-					<div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/15 bg-cyan-400/10 text-cyan-200 transition group-hover:scale-105 group-hover:bg-cyan-400/15">
-						<i class={`fa-solid ${item.icon}`}></i>
-					</div>
-					<h3 class="mt-5 text-lg font-semibold text-white">{item.title}</h3>
-					<p class="mt-2 text-sm leading-6 text-slate-300">{item.description}</p>
-				</article>
-			))}
-		</div>
-	</div>
+    <!-- Ambient glow -->
+    <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[30rem] w-[50rem] rounded-full opacity-30"
+        style="background: radial-gradient(circle, rgba(34,211,238,0.07), transparent 65%); filter: blur(80px);"></div>
+
+    <div class="relative mx-auto max-w-7xl">
+        <SectionHeading
+            eyebrow="Beneficios"
+            title="Una página que se ve bien, carga rápido y cierra más clientes."
+            description="La experiencia visual acompaña el mensaje comercial para que tu negocio no solo se vea moderno, sino también confiable y útil."
+        />
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            {benefitItems.map((item, i) => (
+                <article
+                    class="benefit-card group relative overflow-hidden rounded-2xl p-6 transition-all duration-500"
+                    style="background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(20px);"
+                    data-reveal
+                    style={`--reveal-delay: ${i * 80}ms;`}
+                >
+                    <!-- Watermark number -->
+                    <div class="pointer-events-none absolute -right-3 -top-5 text-8xl font-black leading-none text-white/[0.025] select-none">
+                        {String(i + 1).padStart(2, '0')}
+                    </div>
+
+                    <!-- Hover glow -->
+                    <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        style="background: radial-gradient(circle at 50% 0%, rgba(34,211,238,0.08), transparent 65%);"></div>
+
+                    <!-- Bottom border glow on hover -->
+                    <div class="absolute bottom-0 left-0 h-px w-0 rounded-full transition-all duration-500 group-hover:w-full"
+                        style="background: linear-gradient(90deg, transparent, rgba(34,211,238,0.5), transparent);"></div>
+
+                    <!-- Icon -->
+                    <div class="relative mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
+                        style="background: linear-gradient(135deg, rgba(34,211,238,0.14), rgba(6,182,212,0.05)); border: 1px solid rgba(34,211,238,0.2); box-shadow: 0 0 20px rgba(34,211,238,0.08);">
+                        <i class={`fa-solid ${item.icon} text-cyan-300 text-sm`}></i>
+                    </div>
+
+                    <h3 class="relative text-base font-bold text-white transition-colors group-hover:text-cyan-50">{item.title}</h3>
+                    <p class="relative mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
+                </article>
+            ))}
+        </div>
+    </div>
 </section>

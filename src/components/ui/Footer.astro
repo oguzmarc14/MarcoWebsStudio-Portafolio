@@ -2,18 +2,131 @@
 import { socialLinks, whatsappUrl } from '../../data/landing';
 ---
 
-<footer class="border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8" data-reveal>
-	<div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-		<div>
-			<p class="text-lg font-semibold text-white">Marco Webs Studio</p>
-			<p class="mt-1 text-sm text-slate-400">Páginas web modernas para negocios que quieren vender más.</p>
-		</div>
+<footer class="relative px-4 pt-16 pb-10 sm:px-6 lg:px-8" data-reveal>
 
-		<div class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-			<a href={whatsappUrl} class="transition hover:text-white">WhatsApp</a>
-			{socialLinks.map((social) => (
-				<a href={social.href} class="transition hover:text-white">{social.label}</a>
-			))}
-		</div>
-	</div>
+    <!-- Top separator with glow -->
+    <div class="mx-auto max-w-7xl">
+        <div class="section-divider mb-16"></div>
+    </div>
+
+    <div class="mx-auto max-w-7xl">
+
+        <!-- Main footer grid -->
+        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
+
+            <!-- Brand column -->
+            <div class="space-y-5">
+                <a href="#home" class="group inline-flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105"
+                        style="background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(6,182,212,0.05)); border: 1px solid rgba(34,211,238,0.25); box-shadow: 0 0 24px rgba(34,211,238,0.1);">
+                        <span class="text-xs font-black text-cyan-200">MW</span>
+                    </div>
+                    <div>
+                        <p class="text-base font-bold text-white">Marco Webs Studio</p>
+                        <p class="text-[11px] text-slate-500 font-medium tracking-wide">Diseño web premium</p>
+                    </div>
+                </a>
+                <p class="max-w-xs text-sm leading-6 text-slate-500">
+                    Páginas web modernas, rápidas y enfocadas en conversión para negocios que quieren crecer.
+                </p>
+
+                <!-- Social icons -->
+                <div class="flex items-center gap-3">
+                    {[
+                        { label: 'WhatsApp', href: whatsappUrl, icon: 'fa-brands fa-whatsapp' },
+                        ...socialLinks.map(s => ({
+                            label: s.label,
+                            href: s.href,
+                            icon: s.label === 'Instagram'
+                                ? 'fa-brands fa-instagram'
+                                : s.label === 'Facebook'
+                                    ? 'fa-brands fa-facebook'
+                                    : 'fa-brands fa-tiktok'
+                        }))
+                    ].map((social) => (
+                        <a href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.label}
+                            class="flex h-9 w-9 items-center justify-center rounded-xl text-slate-400 transition-all duration-300 hover:text-cyan-300 hover:scale-110"
+                            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);"
+                        >
+                            <i class={`${social.icon} text-sm`}></i>
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Services column -->
+            <div class="space-y-4">
+                <p class="text-xs font-bold uppercase tracking-[0.28em] text-slate-500">Servicios</p>
+                <ul class="space-y-2.5">
+                    {['Landing page', 'Página profesional', 'Catálogo digital', 'Rediseño web'].map((item) => (
+                        <li>
+                            <a href="#servicios"
+                                class="footer-link text-sm text-slate-400 transition-colors duration-200 hover:text-white">
+                                {item}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <!-- Contact column -->
+            <div class="space-y-4">
+                <p class="text-xs font-bold uppercase tracking-[0.28em] text-slate-500">Contacto</p>
+                <ul class="space-y-2.5">
+                    <li>
+                        <a href={whatsappUrl}
+                            class="footer-link inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-white">
+                            <i class="fa-brands fa-whatsapp text-cyan-400/70 text-sm"></i>
+                            WhatsApp directo
+                        </a>
+                    </li>
+                    {socialLinks.map((social) => (
+                        <li>
+                            <a href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="footer-link text-sm text-slate-400 transition-colors duration-200 hover:text-white">
+                                {social.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
+            <p class="text-xs text-slate-600">
+                © {new Date().getFullYear()} Marco Webs Studio · Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-slate-600">
+                Hecho con <span class="text-cyan-500">♥</span> en México
+            </p>
+        </div>
+    </div>
 </footer>
+
+<style>
+    .footer-link {
+        position: relative;
+    }
+
+    .footer-link::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, #22d3ee, #67e8f9);
+        border-radius: 99px;
+        transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .footer-link:hover::after {
+        width: 100%;
+    }
+</style>
