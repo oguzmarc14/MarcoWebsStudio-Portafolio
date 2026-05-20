@@ -3,7 +3,7 @@ import { processSteps } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section class="relative px-4 py-24 sm:px-6 lg:px-8">
+<section class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
 	<div class="mx-auto max-w-7xl">
 		<SectionHeading
 			eyebrow="Cómo trabajo"
@@ -13,7 +13,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 		<div class="grid gap-5 lg:grid-cols-4">
 			{processSteps.map((step, index) => (
-				<article class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+				<article class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl" data-reveal style={`--reveal-delay: ${index * 80}ms;`}>
 					<div class="absolute right-4 top-4 text-6xl font-semibold text-cyan-400/10">0{index + 1}</div>
 					<div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/15 bg-cyan-400/10 text-cyan-200">
 						<i class="fa-solid fa-check"></i>

@@ -8,8 +8,8 @@ import { whatsappUrl } from '../../data/landing';
     class="pointer-events-none absolute inset-0 opacity-60"
     style="background-image: linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(circle at center, black, transparent 82%);"
   ></div>
-  <div class="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
-  <div class="pointer-events-none absolute -right-20 top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl animate-float-slow"></div>
+  <div class="pointer-events-none absolute -right-20 top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl animate-float"></div>
 
   <section
     id="hero-spotlight"
@@ -20,16 +20,16 @@ import { whatsappUrl } from '../../data/landing';
       class="absolute inset-0 border border-white/5"
       style="background-color: rgba(255,255,255,0.05); backdrop-filter: blur(2px);"
     ></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.05),transparent_30%)]"></div>
+    <div class="absolute inset-0 animate-shimmer bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.05),transparent_30%)]"></div>
 
     <div class="relative grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-      <div class="space-y-8 py-12 sm:py-16 lg:py-20">
-        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-cyan-100/90 shadow-[0_0_24px_rgba(34,211,238,0.15)]">
+      <div class="space-y-8 py-12 sm:py-16 lg:py-20" data-reveal>
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-cyan-100/90 shadow-[0_0_24px_rgba(34,211,238,0.15)] animate-pulse-glow" data-reveal style="--reveal-delay: 80ms;">
           <i class="fa-solid fa-bolt text-cyan-300"></i>
           Diseño premium para negocios locales
         </div>
 
-        <div class="max-w-4xl space-y-6">
+        <div class="max-w-4xl space-y-6" data-reveal style="--reveal-delay: 140ms;">
           <h1 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl">
             Páginas web modernas para negocios que quieren vender más
           </h1>
@@ -38,8 +38,8 @@ import { whatsappUrl } from '../../data/landing';
           </p>
         </div>
 
-        <div class="flex flex-col gap-4 sm:flex-row">
-          <a href={whatsappUrl} class="inline-flex items-center justify-center gap-3 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_35px_rgba(34,211,238,0.28)] transition hover:scale-[1.02] hover:bg-cyan-300">
+        <div class="flex flex-col gap-4 sm:flex-row" data-reveal style="--reveal-delay: 220ms;">
+          <a href={whatsappUrl} class="inline-flex items-center justify-center gap-3 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_35px_rgba(34,211,238,0.28)] transition hover:scale-[1.03] hover:bg-cyan-300 animate-pulse-glow">
             <i class="fa-brands fa-whatsapp text-lg"></i>
             Cotizar por WhatsApp
           </a>
@@ -49,24 +49,24 @@ import { whatsappUrl } from '../../data/landing';
           </a>
         </div>
 
-        <div class="grid gap-3 sm:grid-cols-3">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+        <div class="grid gap-3 sm:grid-cols-3" data-reveal style="--reveal-delay: 300ms;">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:shadow-[0_0_28px_rgba(34,211,238,0.12)]">
             <p class="text-2xl font-semibold text-white">+Rápida</p>
             <p class="mt-1 text-sm text-slate-300">Carga ligera y experiencia fluida.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:shadow-[0_0_28px_rgba(34,211,238,0.12)]">
             <p class="text-2xl font-semibold text-white">Responsive</p>
             <p class="mt-1 text-sm text-slate-300">Se adapta perfecto a celular.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:shadow-[0_0_28px_rgba(34,211,238,0.12)]">
             <p class="text-2xl font-semibold text-white">Conversión</p>
             <p class="mt-1 text-sm text-slate-300">Pensada para generar cotizaciones.</p>
           </div>
         </div>
       </div>
 
-      <div class="relative mx-auto w-full max-w-xl">
-        <div class="absolute inset-8 blur-3xl" style="border-radius: 2rem; background-color: rgba(34,211,238,0.15);"></div>
+      <div class="relative mx-auto w-full max-w-xl" data-reveal style="--reveal-delay: 180ms;">
+        <div class="absolute inset-8 blur-3xl animate-pulse-glow" style="border-radius: 2rem; background-color: rgba(34,211,238,0.15);"></div>
         <div class="relative overflow-hidden border border-white/10 bg-white/5 p-5 shadow-[0_0_70px_rgba(14,165,233,0.12)] backdrop-blur-xl sm:p-6" style="border-radius: 2rem;">
           <div class="flex items-center justify-between border-b border-white/10 pb-4">
             <div>
@@ -77,12 +77,12 @@ import { whatsappUrl } from '../../data/landing';
           </div>
 
           <div class="grid gap-4 py-5 sm:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
+            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4 transition hover:-translate-y-1 hover:border-cyan-300/20 hover:shadow-[0_0_24px_rgba(34,211,238,0.10)]" data-reveal style="--reveal-delay: 120ms;">
               <p class="text-sm text-slate-300">Web profesional</p>
               <p class="mt-3 text-3xl font-semibold text-white">Diseño + estrategia</p>
               <p class="mt-2 text-sm text-slate-400">Contenido claro, visual premium y llamadas a la acción.</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
+            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4 transition hover:-translate-y-1 hover:border-cyan-300/20 hover:shadow-[0_0_24px_rgba(34,211,238,0.10)]" data-reveal style="--reveal-delay: 180ms;">
               <p class="text-sm text-slate-300">WhatsApp listo</p>
               <p class="mt-3 text-3xl font-semibold text-white">Cotizaciones</p>
               <p class="mt-2 text-sm text-slate-400">Conexión directa para cerrar prospectos sin fricción.</p>
@@ -90,9 +90,9 @@ import { whatsappUrl } from '../../data/landing';
           </div>
 
           <div class="grid gap-3 border-t border-white/10 pt-5 text-sm text-slate-300 sm:grid-cols-3">
-            <div class="rounded-2xl bg-white/5 p-3">Negocios locales</div>
-            <div class="rounded-2xl bg-white/5 p-3">Branding moderno</div>
-            <div class="rounded-2xl bg-white/5 p-3">Resultados reales</div>
+            <div class="rounded-2xl bg-white/5 p-3 transition hover:-translate-y-1 hover:bg-white/10" data-reveal style="--reveal-delay: 220ms;">Negocios locales</div>
+            <div class="rounded-2xl bg-white/5 p-3 transition hover:-translate-y-1 hover:bg-white/10" data-reveal style="--reveal-delay: 280ms;">Branding moderno</div>
+            <div class="rounded-2xl bg-white/5 p-3 transition hover:-translate-y-1 hover:bg-white/10" data-reveal style="--reveal-delay: 340ms;">Resultados reales</div>
           </div>
         </div>
       </div>
@@ -109,10 +109,12 @@ import { whatsappUrl } from '../../data/landing';
         hero.style.setProperty('--y', `${event.clientY - bounds.top}px`);
       };
 
-      hero.addEventListener('mousemove', updateSpotlight);
-      hero.addEventListener('mouseleave', () => {
+      const handleMouseLeave = () => {
         hero.style.setProperty('--x', '50%');
         hero.style.setProperty('--y', '30%');
-      });
+      };
+
+      hero.addEventListener('mousemove', updateSpotlight);
+      hero.addEventListener('mouseleave', handleMouseLeave);
     }
   </script>

@@ -3,7 +3,7 @@ import { faqItems } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section id="faq" class="relative px-4 py-24 sm:px-6 lg:px-8">
+<section id="faq" class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
 	<div class="mx-auto max-w-7xl">
 		<SectionHeading
 			eyebrow="Preguntas frecuentes"
@@ -13,7 +13,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 		<div class="grid gap-4 lg:grid-cols-2">
 			{faqItems.map((item) => (
-				<details class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+				<details class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl" data-reveal style="--reveal-delay: 80ms;">
 					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-white">
 						<span>{item.question}</span>
 						<i class="fa-solid fa-plus text-sm text-cyan-200 transition group-open:rotate-45"></i>

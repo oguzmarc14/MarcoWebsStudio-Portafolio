@@ -3,7 +3,7 @@ import { packageItems } from '../../data/landing';
 import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section id="paquetes" class="relative px-4 py-24 sm:px-6 lg:px-8">
+<section id="paquetes" class="relative px-4 py-24 sm:px-6 lg:px-8" data-reveal>
 	<div class="mx-auto max-w-7xl">
 		<SectionHeading
 			eyebrow="Paquetes"
@@ -13,7 +13,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 		<div class="grid gap-6 xl:grid-cols-3">
 			{packageItems.map((item) => (
-				<article class:list={['relative overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition hover:-translate-y-1', item.featured ? 'border-cyan-300/30 bg-cyan-400/10 shadow-[0_0_45px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-white/5']}>
+				<article class:list={['relative overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition hover:-translate-y-1', item.featured ? 'border-cyan-300/30 bg-cyan-400/10 shadow-[0_0_45px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-white/5']} data-reveal style="--reveal-delay: 90ms;">
 					{item.featured && <div class="absolute right-4 top-4 rounded-full bg-cyan-400 px-3 py-1 text-xs font-semibold text-slate-950">Más elegido</div>}
 					<p class="text-sm font-medium uppercase tracking-[0.28em] text-cyan-200/70">{item.title}</p>
 					<p class="mt-3 text-3xl font-semibold text-white">{item.price}</p>

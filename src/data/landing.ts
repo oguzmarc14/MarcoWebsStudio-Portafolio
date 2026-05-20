@@ -63,23 +63,23 @@ export const processSteps = [
 export const packageItems = [
 	{
 		title: 'Básico',
-		price: 'desde $3,000 MXN',
-		description: 'Ideal para una presencia simple, elegante y efectiva.',
-		includes: ['One page', 'Secciones esenciales', 'Botón a WhatsApp', 'Diseño responsive'],
+		price: 'desde $4,000 MXN',
+		description: 'Ideal para negocios que quieren verse profesionales rápido.',
+		includes: ['One page profesional', 'Diseño responsive', 'Botón directo a WhatsApp', 'Secciones esenciales', 'Optimización básica', 'Publicación online'],
 		featured: false,
 	},
 	{
 		title: 'Profesional',
-		price: 'desde $4,500 MXN',
-		description: 'La opción más equilibrada para vender con mejor estructura.',
-		includes: ['Más secciones', 'Proyectos destacados', 'Copy orientado a conversión', 'Optimización visual'],
+		price: 'desde $6,500 MXN',
+		description: 'La opción más recomendada para negocios que quieren vender más.',
+		includes: ['Todo lo del básico', 'Más secciones', 'Diseño premium', 'Copy orientado a conversión', 'Galería/proyectos', 'Formularios de contacto', 'Optimización visual avanzada', 'SEO básico', 'Animaciones y efectos modernos'],
 		featured: true,
 	},
 	{
 		title: 'Avanzado',
-		price: 'desde $6,000+ MXN',
-		description: 'Para negocios que necesitan más personalización y robustez.',
-		includes: ['Estructura ampliada', 'Mejor storytelling', 'Integraciones', 'Escalabilidad'],
+		price: 'desde $10,000+ MXN',
+		description: 'Para negocios que necesitan una presencia digital fuerte y escalable.',
+		includes: ['Todo lo del profesional', 'Sistema administrable', 'Integraciones', 'Base de datos', 'Panel personalizado', 'Automatizaciones', 'Catálogo dinámico', 'Escalabilidad', 'Desarrollo más personalizado'],
 		featured: false,
 	},
 ];
