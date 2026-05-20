@@ -1,8 +1,118 @@
 ---
-import UiHero from '../ui/UiHero.astro';
+import { whatsappUrl } from '../../data/landing';
 ---
 
-<UiHero
-  imagen="/hero-image.webp"
-  altImagen="Imagen de fondo del Hero"
-/>
+<header id="home" class="relative overflow-hidden pt-28 sm:pt-32">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.12),transparent_30%),linear-gradient(180deg,#050816_0%,#080f1f_55%,#0f172a_100%)]"></div>
+  <div
+    class="pointer-events-none absolute inset-0 opacity-60"
+    style="background-image: linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(circle at center, black, transparent 82%);"
+  ></div>
+  <div class="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-20 top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"></div>
+
+  <section
+    id="hero-spotlight"
+    style="--x: 50%; --y: 30%; background-image: radial-gradient(circle at var(--x) var(--y), rgba(56,189,248,0.25), transparent 280px), radial-gradient(circle at 20% 20%, rgba(59,130,246,0.15), transparent 36%), linear-gradient(180deg, rgba(5,8,22,0.92), rgba(8,15,31,0.98));"
+    class="relative mx-auto max-w-7xl overflow-hidden px-4 pb-24 sm:px-6 lg:px-8"
+  >
+    <div
+      class="absolute inset-0 border border-white/5"
+      style="background-color: rgba(255,255,255,0.05); backdrop-filter: blur(2px);"
+    ></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.05),transparent_30%)]"></div>
+
+    <div class="relative grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+      <div class="space-y-8 py-12 sm:py-16 lg:py-20">
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-cyan-100/90 shadow-[0_0_24px_rgba(34,211,238,0.15)]">
+          <i class="fa-solid fa-bolt text-cyan-300"></i>
+          Diseño premium para negocios locales
+        </div>
+
+        <div class="max-w-4xl space-y-6">
+          <h1 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl">
+            Páginas web modernas para negocios que quieren vender más
+          </h1>
+          <p class="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            Creo sitios elegantes, rápidos y enfocados en conversión para negocios pequeños y medianos que necesitan verse profesionales, destacar en su zona y convertir visitas en clientes.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a href={whatsappUrl} class="inline-flex items-center justify-center gap-3 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_35px_rgba(34,211,238,0.28)] transition hover:scale-[1.02] hover:bg-cyan-300">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            Cotizar por WhatsApp
+          </a>
+          <a href="#proyectos" class="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-cyan-300/30 hover:bg-white/10">
+            Ver proyectos
+            <i class="fa-solid fa-arrow-right text-xs text-cyan-200"></i>
+          </a>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+            <p class="text-2xl font-semibold text-white">+Rápida</p>
+            <p class="mt-1 text-sm text-slate-300">Carga ligera y experiencia fluida.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+            <p class="text-2xl font-semibold text-white">Responsive</p>
+            <p class="mt-1 text-sm text-slate-300">Se adapta perfecto a celular.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+            <p class="text-2xl font-semibold text-white">Conversión</p>
+            <p class="mt-1 text-sm text-slate-300">Pensada para generar cotizaciones.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-xl">
+        <div class="absolute inset-8 blur-3xl" style="border-radius: 2rem; background-color: rgba(34,211,238,0.15);"></div>
+        <div class="relative overflow-hidden border border-white/10 bg-white/5 p-5 shadow-[0_0_70px_rgba(14,165,233,0.12)] backdrop-blur-xl sm:p-6" style="border-radius: 2rem;">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-cyan-200/70">Presencia digital</p>
+              <p class="mt-2 text-xl font-semibold text-white">Marco Webs Studio</p>
+            </div>
+            <div class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">Disponible</div>
+          </div>
+
+          <div class="grid gap-4 py-5 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
+              <p class="text-sm text-slate-300">Web profesional</p>
+              <p class="mt-3 text-3xl font-semibold text-white">Diseño + estrategia</p>
+              <p class="mt-2 text-sm text-slate-400">Contenido claro, visual premium y llamadas a la acción.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
+              <p class="text-sm text-slate-300">WhatsApp listo</p>
+              <p class="mt-3 text-3xl font-semibold text-white">Cotizaciones</p>
+              <p class="mt-2 text-sm text-slate-400">Conexión directa para cerrar prospectos sin fricción.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-3 border-t border-white/10 pt-5 text-sm text-slate-300 sm:grid-cols-3">
+            <div class="rounded-2xl bg-white/5 p-3">Negocios locales</div>
+            <div class="rounded-2xl bg-white/5 p-3">Branding moderno</div>
+            <div class="rounded-2xl bg-white/5 p-3">Resultados reales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const hero = document.querySelector<HTMLElement>('#hero-spotlight');
+
+    if (hero) {
+      const updateSpotlight = (event: MouseEvent) => {
+        const bounds = hero.getBoundingClientRect();
+        hero.style.setProperty('--x', `${event.clientX - bounds.left}px`);
+        hero.style.setProperty('--y', `${event.clientY - bounds.top}px`);
+      };
+
+      hero.addEventListener('mousemove', updateSpotlight);
+      hero.addEventListener('mouseleave', () => {
+        hero.style.setProperty('--x', '50%');
+        hero.style.setProperty('--y', '30%');
+      });
+    }
+  </script>

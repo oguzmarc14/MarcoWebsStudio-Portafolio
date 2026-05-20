@@ -22,7 +22,10 @@ const { imagen, altImagen } = Astro.props as Props;
 >
   <div class:list={["absolute", "inset-0", "w-full", "h-full"]}>
     <img src={imagen} alt={altImagen} class="w-full h-auto object-cover" />
-    <div class:list={["absolute", "inset-0", "bg-black/20", "opacity-0"]}></div>
+    {/* Gradiente oscuro en la parte inferior */}
+    <div class="absolute inset-0 w-full h-full pointer-events-none">
+      <div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black via-black/90 to-transparent"></div>
+    </div>
   </div>
   <div
     class:list={[
@@ -40,12 +43,12 @@ const { imagen, altImagen } = Astro.props as Props;
     <h1 class:list={["text-white", "relative", "text-8xl", "font-family"]}>
       Marco<br />Webs Studio
     </h1>
-    <h2 class:list={["text-gray-400/80", "ml-1", "font-family", "text-3xl", "w-2/7"]}>
-      Websites modernas para negocios que quieren crecer
+    <h2 class:list={["text-blue-300/60", "ml-1", "font-family", "text-3xl", "w-3/7"]}>
+      Tu negocio necesita una web que genere clientes, no solo que se vea bonita
     </h2>
     <slot>
       <div class:list={["flex", "gap-2"]}>
-        <Boton textBoton1="Cotizar Por Whatsapp" href="#home" botonPrincipal />
+        <Boton textBoton1="Cotizar Mi Pagina Web" href="#home" botonPrincipal />
         <Boton textBoton1="Proyectos" href="#hom" botonPrincipal={false} />
       </div>
     <div class:list={["flex", "items-center", "gap-4", "mt-10", "ml-2"]}>

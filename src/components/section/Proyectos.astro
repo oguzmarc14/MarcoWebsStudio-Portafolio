@@ -1,52 +1,44 @@
 ---
-import CardProyectos from "../ui/CardProyectos.astro";
-
-const cardProyectos = [
-  {
-    imagen: "/Noe.webp",
-    altImagen: "",
-    titulo: "Agencia De Terrenos",
-    descripcion: "Descripción del proyecto 1",
-    enlace: "#",
-
-  },
-  {
-    imagen: "/Gibs.webp",
-    altImagen: "",
-    titulo: "Venta De Baterias",
-    descripcion: "Descripción del proyecto 2",
-    enlace: "#",
-  },
-  {
-    imagen: "/Alondra.webp",
-    altImagen: "Proyecto 3",
-    titulo: "Nutriologa Alondra",
-    descripcion: "Descripción del proyecto 3",
-    enlace: "#",
-  },
-];
+import { projectItems } from '../../data/landing';
+import SectionHeading from '../ui/SectionHeading.astro';
 ---
 
-<section
-  class:list={["bg-linear-to-b", "from-black", "via-[#060514]", "to-[#040d16]", "relative", "h-380"]}
-  style="background: url('/fondo-proyectos.webp') center bottom/cover no-repeat;"
->
-  <div class="absolute inset-0 bg-black/90 pointer-events-none z-0"></div>
+<section id="proyectos" class="relative px-4 py-24 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl">
+		<SectionHeading
+			eyebrow="Proyectos destacados"
+			title="Trabajo reciente con enfoque en conversión y presencia premium."
+			description="Cada proyecto busca claridad, confianza visual y una ruta directa para que el negocio reciba contactos reales."
+		/>
 
-  <div class="relative z-10">
-    <h2 class="text-4xl font-bold text-center mb-10 text-white font-family pt-20">Proyectos Destacados</h2>
-    <div class="container mx-auto grid grid-rows-2 grid-cols-2 gap-8">
-      {cardProyectos.map((proyecto) => (
-        <CardProyectos
-          titulo={proyecto.titulo}
-          imagen={proyecto.imagen}
-          altImagen={proyecto.altImagen}
-          srcImagen={proyecto.imagen}
-          textoBoton="Ver Proyecto"
-          srcBoton={proyecto.enlace}
-        />
-      ))}
-    </div>
-  </div>
+		<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+			{projectItems.map((project) => (
+				<article class="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_0_40px_rgba(14,165,233,0.08)] backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:bg-white/8">
+					<div class="relative overflow-hidden rounded-2xl border border-white/10">
+						<img src={project.image} alt={project.alt} class="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+						<div class="absolute inset-0 bg-linear-to-t from-[#050816] via-transparent to-transparent"></div>
+					</div>
+
+					<div class="space-y-4 p-3 pt-5">
+						<div class="flex flex-wrap gap-2">
+							{project.badges.map((badge) => (
+								<span class="rounded-full border border-cyan-400/15 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-100">{badge}</span>
+							))}
+						</div>
+
+						<div class="space-y-2">
+							<h3 class="text-xl font-semibold text-white">{project.title}</h3>
+							<p class="text-sm leading-6 text-slate-300">{project.description}</p>
+						</div>
+
+						<a href={project.href} class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan-300/30 hover:bg-cyan-400/10">
+							Ver proyecto
+							<i class="fa-solid fa-arrow-right text-xs text-cyan-200"></i>
+						</a>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
 </section>
 

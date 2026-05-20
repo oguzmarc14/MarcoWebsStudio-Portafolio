@@ -3,18 +3,25 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="theme-color" content="#050816" />
+		<meta
+			name="description"
+			content="Marco Webs Studio diseña páginas web modernas, rápidas y enfocadas en convertir visitas en clientes para negocios pequeños y medianos."
+		/>
+		<title>Marco Webs Studio | Páginas web modernas que venden más</title>
 		<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Mea+Culpa&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Satisfy&family=Tourney:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Oswald:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
-	<body>
+	<body class="bg-[#050816] text-white antialiased">
 		<slot />
 	</body>
 </html>
@@ -25,5 +32,16 @@ import "../styles/global.css";
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		background: #050816;
+	}
+
+	body {
+		background:
+			radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 36%),
+			linear-gradient(180deg, #050816 0%, #080f1f 42%, #0f172a 100%);
 	}
 </style>

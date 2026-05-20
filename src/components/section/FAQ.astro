@@ -1,0 +1,26 @@
+---
+import { faqItems } from '../../data/landing';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section id="faq" class="relative px-4 py-24 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl">
+		<SectionHeading
+			eyebrow="Preguntas frecuentes"
+			title="Respuestas rápidas antes de cotizar."
+			description="Las dudas principales están resueltas aquí para que el proceso sea más claro desde el inicio."
+		/>
+
+		<div class="grid gap-4 lg:grid-cols-2">
+			{faqItems.map((item) => (
+				<details class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-white">
+						<span>{item.question}</span>
+						<i class="fa-solid fa-plus text-sm text-cyan-200 transition group-open:rotate-45"></i>
+					</summary>
+					<p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300">{item.answer}</p>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,28 @@
+---
+import { serviceItems } from '../../data/landing';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section id="servicios" class="relative px-4 py-24 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl">
+		<SectionHeading
+			eyebrow="Servicios"
+			title="Servicios diseñados para vender, presentar y convertir."
+			description="Desde una landing directa hasta un sitio más completo, cada solución se adapta al tipo de negocio y al objetivo comercial."
+		/>
+
+		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			{serviceItems.map((service, index) => (
+				<div class="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:bg-white/8">
+					<div>
+						<p class="text-xs uppercase tracking-[0.24em] text-cyan-200/60">0{index + 1}</p>
+						<h3 class="mt-2 text-lg font-semibold text-white">{service}</h3>
+					</div>
+					<div class="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-400/15 bg-cyan-400/10 text-cyan-200 transition group-hover:scale-105">
+						<i class="fa-solid fa-sparkles"></i>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

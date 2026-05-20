@@ -1,0 +1,19 @@
+---
+import { socialLinks, whatsappUrl } from '../../data/landing';
+---
+
+<footer class="border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8">
+	<div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+		<div>
+			<p class="text-lg font-semibold text-white">Marco Webs Studio</p>
+			<p class="mt-1 text-sm text-slate-400">Páginas web modernas para negocios que quieren vender más.</p>
+		</div>
+
+		<div class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+			<a href={whatsappUrl} class="transition hover:text-white">WhatsApp</a>
+			{socialLinks.map((social) => (
+				<a href={social.href} class="transition hover:text-white">{social.label}</a>
+			))}
+		</div>
+	</div>
+</footer>

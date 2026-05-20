@@ -3,5 +3,22 @@
 @theme {
   --font-family: "Bungee", sans-serif;
   --font-fondo: "Tourney", sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-sora: 'Sora', sans-serif;
+  --font-osvald: 'Oswald', sans-serif;
+  --font-plus: 'Plus Jakarta Sans', sans-serif;
+}
 
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-plus);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }

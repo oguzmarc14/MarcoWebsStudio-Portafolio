@@ -1,7 +1,30 @@
-<nav class:list={["absolute", "flex", "justify-center", "w-full", "fixed", "z-220"]}>
-    <ul class:list={["flex", "z-100", "absolute", "mx-auto", "w-fit", "bg-gray-700/20", "mt-4", "gap-4", "px-40", "py-4", "rounded-full h-16", "border-2", "border-gray-500/50"]}>
-    <li><a class:list={["text-white", "font-family", "bg-gray-300/20", "px-3", "py-3", "rounded-3xl", "hover:text-lg"]} href="#home">Inicio</a></li>
-    <li><a class:list={["text-white", "font-family", "hover:text-lg", "duration-300"]} href="#servicios">Servicios</a></li>
-    <li><a class:list={["text-white", "font-family", "hover:text-lg", "duration-300"]} href="#proyectos">Proyectos</a></li>
-    <li><a class:list={["text-white", "font-family", "hover:text-lg", "duration-300"]} href="#contactame">Contactame</a></li>
-</ul></nav>
+---
+import { navLinks, whatsappUrl } from '../../data/landing';
+---
+
+<nav class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <div class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-[#050816]/75 px-4 py-3 backdrop-blur-xl shadow-[0_12px_60px_rgba(8,15,31,0.35)]">
+        <a href="#home" class="flex items-center gap-3 text-white">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.18)]">
+                MW
+            </span>
+            <span class="text-sm font-semibold tracking-[0.24em] uppercase sm:text-base">Marco Webs Studio</span>
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm text-slate-200/80 md:flex">
+            {navLinks.map((item) => (
+                <a class="transition hover:text-white" href={item.href}>{item.label}</a>
+            ))}
+        </div>
+
+        <a
+            href={whatsappUrl}
+            class="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.28)] transition hover:scale-[1.02] hover:bg-cyan-300"
+            aria-label="Cotizar por WhatsApp"
+        >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span class="hidden sm:inline">Cotizar por WhatsApp</span>
+            <span class="sm:hidden">WhatsApp</span>
+        </a>
+    </div>
+</nav>
