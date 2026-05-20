@@ -13,7 +13,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 		<div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
 			{benefitItems.map((item) => (
-				<article class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:bg-white/8 hover:shadow-[0_0_30px_rgba(14,165,233,0.12)]" data-reveal style="--reveal-delay: 90ms;">
+				<article class="premium-surface group rounded-2xl bg-white/5 p-5" data-reveal style="--reveal-delay: 90ms;">
 					<div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/15 bg-cyan-400/10 text-cyan-200 transition group-hover:scale-105 group-hover:bg-cyan-400/15">
 						<i class={`fa-solid ${item.icon}`}></i>
 					</div>

@@ -13,7 +13,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{serviceItems.map((service, index) => (
-				<div class="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/20 hover:bg-white/8" data-reveal style={`--reveal-delay: ${index * 70}ms;`}>
+				<div class="premium-surface group flex items-center justify-between rounded-2xl bg-white/5 p-5" data-reveal style={`--reveal-delay: ${index * 70}ms;`}>
 					<div>
 						<p class="text-xs uppercase tracking-[0.24em] text-cyan-200/60">0{index + 1}</p>
 						<h3 class="mt-2 text-lg font-semibold text-white">{service}</h3>

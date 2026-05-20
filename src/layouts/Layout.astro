@@ -21,8 +21,18 @@ import "../styles/global.css";
 		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Oswald:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
-	<body class="bg-[#050816] text-white antialiased">
-		<slot />
+	<body class="relative isolate overflow-x-hidden bg-[#050816] text-white antialiased">
+		<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+			<div class="absolute rounded-full bg-cyan-400/10 blur-[120px] animate-float-slow" style="left: -10rem; top: 6rem; width: 34rem; height: 34rem;"></div>
+			<div class="absolute rounded-full bg-blue-500/10 blur-[140px] animate-float" style="right: -10rem; top: -6rem; width: 30rem; height: 30rem;"></div>
+			<div class="absolute left-1/2 rounded-full bg-sky-400/10 blur-[160px] animate-float-slow" style="bottom: -12rem; width: 28rem; height: 28rem; transform: translateX(-50%);"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_32%),linear-gradient(180deg,rgba(5,8,22,0.92),rgba(8,17,32,0.98))]"></div>
+			<div class="absolute inset-0 opacity-25 mix-blend-screen" style="background-image: linear-gradient(rgba(148,163,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.05) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at center, black, transparent 78%);"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.04),transparent_18%),radial-gradient(circle_at_80%_80%,rgba(34,211,238,0.06),transparent_16%)] opacity-50"></div>
+		</div>
+		<div class="relative z-10">
+			<slot />
+		</div>
 		<script>
 			const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
 

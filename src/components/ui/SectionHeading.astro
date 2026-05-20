@@ -9,7 +9,7 @@ const { eyebrow, title, description } = Astro.props as Props;
 ---
 
 <div class="mb-12 max-w-2xl space-y-4" data-reveal style="--reveal-delay: 0ms;">
-	<p class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200/80">{eyebrow}</p>
-	<h2 class="text-3xl font-semibold text-white sm:text-4xl">{title}</h2>
-	{description && <p class="text-slate-300">{description}</p>}
+	<p class="premium-chip inline-flex rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100/90">{eyebrow}</p>
+	<h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{title}</h2>
+	{description && <p class="max-w-xl text-slate-300">{description}</p>}
 </div>
