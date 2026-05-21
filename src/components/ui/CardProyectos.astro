@@ -41,7 +41,7 @@ const { titulo, imagen, altImagen, srcImagen, textoBoton, srcBoton } =
 >
   <!-- GLOW -->
   <div
-    class="absolute -inset-10 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100 bg-blue-700/10 pointer-events-none"
+    class="absolute -inset-10 opacity-0 blur-sm transition duration-500 group-hover:opacity-100 bg-blue-700/8 pointer-events-none"
   ></div>
 
   <!-- CONTENIDO -->
@@ -51,7 +51,7 @@ const { titulo, imagen, altImagen, srcImagen, textoBoton, srcBoton } =
       {titulo}
     </h3>
 
-    <img src={srcImagen} alt={altImagen} />
+    <img src={srcImagen} alt={altImagen} loading="lazy" decoding="async" class="w-full h-auto max-h-44 sm:max-h-60 object-contain mx-auto" />
 
     <!-- BENEFICIOS -->
     <div class="flex justify-center gap-4 text-sm text-white/80 mb-3 mt-5">

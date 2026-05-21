@@ -11,5 +11,11 @@
       "sizes": "any",
       "type": "image/png"
     }
+    ,
+    {
+      "src": "/logo.webp",
+      "sizes": "any",
+      "type": "image/webp"
+    }
   ]
 }

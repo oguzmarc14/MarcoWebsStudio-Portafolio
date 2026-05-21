@@ -20,20 +20,20 @@ import { whatsappUrl } from '../../data/landing';
     <div class="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
         style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.9) 1px, transparent 0); background-size: 28px 28px;"></div>
 
-    <!-- Aurora blobs -->
-    <div class="pointer-events-none absolute -left-32 top-20 h-[38rem] w-[38rem] rounded-full animate-aurora"
+    <!-- Aurora blobs (hidden on small screens) -->
+    <div class="hidden sm:block pointer-events-none absolute -left-32 top-20 h-[38rem] w-[38rem] rounded-full animate-aurora"
         style="background: radial-gradient(circle, rgba(34,211,238,0.13), transparent 65%); filter: blur(80px);"></div>
-    <div class="pointer-events-none absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full animate-aurora-alt"
+    <div class="hidden sm:block pointer-events-none absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full animate-aurora-alt"
         style="background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 65%); filter: blur(100px);"></div>
-    <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 h-[50rem] w-[60rem] rounded-full animate-pulse-glow"
+    <div class="hidden sm:block pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 h-[50rem] w-[60rem] rounded-full animate-pulse-glow"
         style="background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 55%); filter: blur(120px);"></div>
 
     <!-- Scan line -->
     <div class="pointer-events-none absolute inset-x-0 top-0 h-px w-full animate-scan"
         style="background: linear-gradient(90deg, transparent, rgba(34,211,238,0.6), transparent);"></div>
 
-    <!-- Floating particles -->
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <!-- Floating particles (hide on small screens) -->
+    <div class="hidden sm:block pointer-events-none absolute inset-0 overflow-hidden">
         <div class="particle" style="left:12%; top:18%; animation-delay:0s;"></div>
         <div class="particle" style="left:27%; top:65%; animation-delay:1.2s;"></div>
         <div class="particle" style="left:55%; top:22%; animation-delay:2.4s;"></div>
@@ -190,22 +190,25 @@ import { whatsappUrl } from '../../data/landing';
     <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050816] to-transparent"></div>
 
     <script>
-        const hero = document.querySelector<HTMLElement>('#hero-spotlight');
-        const spotlight = hero?.querySelector<HTMLElement>('.spotlight');
+        // Only attach mousemove spotlight on devices with a precise pointer
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            const hero = document.querySelector<HTMLElement>('#hero-spotlight');
+            const spotlight = hero?.querySelector<HTMLElement>('.spotlight');
 
-        if (hero && spotlight) {
-            const update = (e: MouseEvent) => {
-                const b = hero.getBoundingClientRect();
-                const x = e.clientX - b.left;
-                const y = e.clientY - b.top;
-                spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(34,211,238,0.12), rgba(34,211,238,0.04) 30%, transparent 65%)`;
-            };
-            const reset = () => {
-                spotlight.style.background = 'radial-gradient(600px circle at 50% 30%, rgba(34,211,238,0.07), transparent 65%)';
-            };
-            reset();
-            hero.addEventListener('mousemove', update, { passive: true });
-            hero.addEventListener('mouseleave', reset);
+            if (hero && spotlight) {
+                const update = (e) => {
+                    const b = hero.getBoundingClientRect();
+                    const x = e.clientX - b.left;
+                    const y = e.clientY - b.top;
+                    spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(34,211,238,0.12), rgba(34,211,238,0.04) 30%, transparent 65%)`;
+                };
+                const reset = () => {
+                    spotlight.style.background = 'radial-gradient(600px circle at 50% 30%, rgba(34,211,238,0.07), transparent 65%)';
+                };
+                reset();
+                hero.addEventListener('mousemove', update, { passive: true });
+                hero.addEventListener('mouseleave', reset);
+            }
         }
     </script>
 </header>

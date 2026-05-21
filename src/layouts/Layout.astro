@@ -7,6 +7,7 @@ import "../styles/global.css";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/logo.webp" type="image/webp" />
 		<link rel="icon" href="/logo.png" type="image/png" />
 		<link rel="apple-touch-icon" href="/logo.png" />
 		<link rel="manifest" href="/site.webmanifest" />
@@ -32,17 +33,17 @@ import "../styles/global.css";
 			<!-- Base gradient -->
 			<div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(34,211,238,0.09), transparent), linear-gradient(180deg, #050816 0%, #080f1f 50%, #0a1628 100%);"></div>
 
-			<!-- Aurora blobs -->
-			<div class="absolute rounded-full animate-aurora" style="left: -18rem; top: 5rem; width: 52rem; height: 52rem; background: radial-gradient(circle, rgba(34,211,238,0.09), transparent 68%); filter: blur(80px);"></div>
-			<div class="absolute rounded-full animate-aurora-alt" style="right: -16rem; top: -8rem; width: 46rem; height: 46rem; background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 68%); filter: blur(90px);"></div>
-			<div class="absolute rounded-full animate-float-slow" style="left: 30%; bottom: -20rem; width: 44rem; height: 44rem; background: radial-gradient(circle, rgba(15,23,42,0.6), rgba(34,211,238,0.05), transparent 68%); filter: blur(100px);"></div>
-			<div class="absolute rounded-full animate-float-med" style="right: 20%; top: 40%; width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(103,232,249,0.06), transparent 68%); filter: blur(80px);"></div>
+			<!-- Aurora blobs (hidden on small screens) -->
+			<div class="hidden sm:block absolute rounded-full animate-aurora" style="left: -18rem; top: 5rem; width: 52rem; height: 52rem; background: radial-gradient(circle, rgba(34,211,238,0.09), transparent 68%); filter: blur(80px);"></div>
+			<div class="hidden sm:block absolute rounded-full animate-aurora-alt" style="right: -16rem; top: -8rem; width: 46rem; height: 46rem; background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 68%); filter: blur(90px);"></div>
+			<div class="hidden sm:block absolute rounded-full animate-float-slow" style="left: 30%; bottom: -20rem; width: 44rem; height: 44rem; background: radial-gradient(circle, rgba(15,23,42,0.6), rgba(34,211,238,0.05), transparent 68%); filter: blur(100px);"></div>
+			<div class="hidden sm:block absolute rounded-full animate-float-med" style="right: 20%; top: 40%; width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(103,232,249,0.06), transparent 68%); filter: blur(80px);"></div>
 
-			<!-- Animated grid -->
-			<div class="absolute inset-0 animate-grid-move opacity-[0.04]" style="background-image: linear-gradient(rgba(148,163,184,1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,1) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);"></div>
+			<!-- Animated grid (hidden on small screens) -->
+			<div class="hidden sm:block absolute inset-0 animate-grid-move opacity-[0.04]" style="background-image: linear-gradient(rgba(148,163,184,1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,1) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);"></div>
 
-			<!-- Noise overlay -->
-			<div class="noise-overlay"></div>
+			<!-- Noise overlay (reduced on small screens) -->
+			<div class="hidden sm:block noise-overlay"></div>
 
 			<!-- Radial vignette -->
 			<div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 80% at 50% 50%, transparent 40%, rgba(5,8,22,0.55) 100%);"></div>

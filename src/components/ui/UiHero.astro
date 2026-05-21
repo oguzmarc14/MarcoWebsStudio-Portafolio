@@ -21,7 +21,7 @@ const { imagen, altImagen } = Astro.props as Props;
   ]}
 >
   <div class:list={["absolute", "inset-0", "w-full", "h-full"]}>
-    <img src={imagen} alt={altImagen} class="w-full h-auto object-cover" />
+    <img src={imagen} alt={altImagen} loading="lazy" decoding="async" class="w-full h-full object-cover" />
     {/* Gradiente oscuro en la parte inferior */}
     <div class="absolute inset-0 w-full h-full pointer-events-none">
       <div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black via-black/90 to-transparent"></div>
