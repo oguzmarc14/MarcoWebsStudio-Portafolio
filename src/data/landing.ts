@@ -1,6 +1,9 @@
-export const whatsappUrl =
-	'https://wa.me/5214751102810?text=' +
-	encodeURIComponent('Hola Marco Webs Studio, quiero cotizar una página web para mi negocio.');
+const whatsappNumber = '523348153699';
+
+export const createWhatsappUrl = (message: string) =>
+	`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+export const whatsappUrl = createWhatsappUrl('Hola Marco Webs Studio, quiero cotizar una página web para mi negocio.');
 
 export const navLinks = [
 	{ label: 'Beneficios', href: '#beneficios' },
@@ -11,11 +14,11 @@ export const navLinks = [
 ];
 
 export const benefitItems = [
-	{ title: 'Diseño profesional', description: 'Interfaz elegante, clara y alineada con la percepción premium de tu marca.', icon: 'fa-palette' },
-	{ title: 'Adaptada a celular', description: 'Experiencia fluida en smartphone, tablet y desktop para no perder clientes.', icon: 'fa-mobile-screen-button' },
-	{ title: 'Botón directo a WhatsApp', description: 'Cada página dirige la conversación al cierre con un CTA visible y efectivo.', icon: 'fa-whatsapp' },
-	{ title: 'Optimizada para clientes locales', description: 'Estructura pensada para negocios de tu zona y búsquedas con intención real.', icon: 'fa-location-dot' },
-	{ title: 'Rápida y moderna', description: 'Carga ligera, animaciones suaves y una base técnica preparada para crecer.', icon: 'fa-bolt' },
+	{ title: '01 — Diseño estratégico', description: 'No solo se ve moderna. Tu página transmite confianza y profesionalismo desde el primer segundo.', icon: 'fa-compass-drafting' },
+	{ title: '02 — Perfecta en cualquier dispositivo', description: 'Experiencia fluida y rápida en celular, tablet y computadora.', icon: 'fa-mobile-screen-button' },
+	{ title: '03 — Conversión directa por WhatsApp', description: 'Botones y llamadas a la acción pensadas para generar más mensajes y clientes.', icon: 'fa-whatsapp' },
+	{ title: '04 — Optimizada para búsquedas locales', description: 'Preparada para negocios que quieren aparecer mejor en Google y destacar en su zona.', icon: 'fa-location-dot' },
+	{ title: '05 — Rápida, ligera y moderna', description: 'Carga veloz, animaciones suaves y una estructura preparada para crecer.', icon: 'fa-bolt' },
 ];
 
 export const serviceItems = [
