@@ -2,8 +2,8 @@
 import { navLinks, whatsappUrl } from '../../data/landing';
 ---
 
-<nav id="main-navbar" class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 animate-fade-in">
-    <div class="navbar-inner mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500"
+<nav id="main-navbar" class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4 animate-fade-in">
+    <div class="navbar-inner mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-3 py-2.5 sm:px-4 sm:py-3 transition-all duration-500"
         style="background: rgba(5,8,22,0.6); backdrop-filter: blur(20px) saturate(1.5); border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);">
 
         <!-- Logo -->
@@ -17,7 +17,7 @@ import { navLinks, whatsappUrl } from '../../data/landing';
                     <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
                 </span>
             </div>
-            <span class="text-sm font-semibold tracking-wide text-white/90 transition group-hover:text-white sm:text-sm">Marco Webs Studio</span>
+            <span class="text-sm font-semibold tracking-wide text-white/90 transition group-hover:text-white sm:text-sm max-[360px]:hidden">Marco Webs Studio</span>
         </a>
 
         <!-- Nav Links -->
@@ -32,7 +32,7 @@ import { navLinks, whatsappUrl } from '../../data/landing';
 
         <!-- CTA Button -->
         <a href={whatsappUrl}
-            class="premium-button inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold"
+            class="premium-button inline-flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 text-sm font-semibold"
             aria-label="Cotizar por WhatsApp">
             <i class="fa-brands fa-whatsapp text-base"></i>
             <span class="hidden sm:inline">Cotizar ahora</span>

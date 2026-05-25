@@ -489,6 +489,14 @@ a {
 
 /* ─── MOBILE PERFORMANCE TWEAKS ───────────────────────────────── */
 @media (max-width: 640px) {
+  /* prevent horizontal stretching from decorative absolute elements */
+  html,
+  body {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
   /* disable heavy backdrop filters on small screens */
   [style*="backdrop-filter"], .backdrop-filter {
     -webkit-backdrop-filter: none !important;

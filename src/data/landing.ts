@@ -19,21 +19,21 @@ export const benefitItems = [
 ];
 
 export const serviceItems = [
-	'Landing page',
-	'Página web profesional',
-	'Catálogo digital',
-	'Sitio para inmobiliarias/terrenos',
-	'Rediseño de páginas antiguas',
+	'Presencia digital premium',
+	'Sitios enfocados en conversión',
+	'Desarrollo web personalizado',
+	'Automatización e integración',
+	'Optimización y escalabilidad',
 ];
 
 export const projectItems = [
 	{
 		title: 'Agencia de terrenos',
-		description: 'Un sitio enfocado en captación de leads para propiedades, lotes y oportunidades de venta.',
+		description: 'Un sitio enfocado en venta de propiedades, lotes y oportunidades de venta.',
 		image: '/Noe.webp',
 		alt: 'Proyecto de agencia de terrenos',
 		href: 'https://noeaguilera.com',
-		badges: ['Inmobiliaria', 'Leads', 'Responsive'],
+		badges: ['Inmobiliaria', 'Ventas', 'Responsive'],
 	},
 	{
 		title: 'Venta de baterías',
@@ -54,32 +54,64 @@ export const projectItems = [
 ];
 
 export const processSteps = [
-	{ title: 'Analizo tu negocio', description: 'Entiendo qué vendes, a quién le vendes y qué tiene que lograr la página.' },
-	{ title: 'Diseño una propuesta', description: 'Defino estructura, visual, mensajes y ruta de conversión antes de desarrollar.' },
-	{ title: 'Desarrollo la página', description: 'Construyo la landing con una experiencia moderna, rápida y responsive.' },
-	{ title: 'Publicamos y conectamos WhatsApp', description: 'Dejamos todo listo para recibir clientes y responder sin fricción.' },
+	{ title: 'Analizo tu negocio', description: 'Analizamos tu negocio, objetivos y clientes para crear una solución alineada a lo que realmente necesitas.' },
+	{ title: 'Diseñamos la estrategia visual', description: 'Definimos estructura, diseño y experiencia para transmitir profesionalismo y generar confianza.' },
+	{ title: 'Desarrollamos la experiencia', description: 'Construimos una página rápida, moderna y optimizada para dispositivos móviles y conversión.' },
+	{ title: 'Lanzamos y optimizamos', description: 'Publicamos tu proyecto y dejamos todo listo para captar clientes y escalar tu presencia digital.' },
 ];
 
 export const packageItems = [
 	{
 		title: 'Básico',
-		price: 'desde $4,000 MXN',
-		description: 'Ideal para negocios que quieren verse profesionales rápido.',
-		includes: ['One page profesional', 'Diseño responsive', 'Botón directo a WhatsApp', 'Secciones esenciales', 'Optimización básica', 'Publicación online'],
+		price: 'desde $4,500 MXN',
+		description: 'Ideal para negocios que buscan una presencia profesional rápida y efectiva.',
+		includes: [
+			'Landing page profesional',
+			'Diseño responsive',
+			'Botón directo a WhatsApp',
+			'Hasta 4 secciones',
+			'Optimización básica SEO',
+			'Publicación online',
+			'1 revisión incluida',
+		],
 		featured: false,
 	},
 	{
 		title: 'Profesional',
-		price: 'desde $6,500 MXN',
-		description: 'La opción más recomendada para negocios que quieren vender más.',
-		includes: ['Todo lo del básico', 'Más secciones', 'Diseño premium', 'Copy orientado a conversión', 'Galería/proyectos', 'Formularios de contacto', 'Optimización visual avanzada', 'SEO básico', 'Animaciones y efectos modernos'],
+		price: 'desde $8,500 MXN',
+		description: 'La opción más recomendada para negocios que quieren destacar y generar más clientes.',
+		includes: [
+			'Todo lo del básico',
+			'Hasta 7 secciones',
+			'Diseño premium personalizado',
+			'Copy orientado a conversión',
+			'Galería o proyectos',
+			'Formularios de contacto',
+			'Optimización visual avanzada',
+			'SEO básico',
+			'Animaciones y efectos modernos',
+			'Mayor enfoque en conversión',
+			'2 revisiones incluidas',
+		],
 		featured: true,
 	},
 	{
 		title: 'Avanzado',
-		price: 'desde $10,000+ MXN',
-		description: 'Para negocios que necesitan una presencia digital fuerte y escalable.',
-		includes: ['Todo lo del profesional', 'Sistema administrable', 'Integraciones', 'Base de datos', 'Panel personalizado', 'Automatizaciones', 'Catálogo dinámico', 'Escalabilidad', 'Desarrollo más personalizado'],
+		price: 'desde $15,000+ MXN',
+		description: 'Para negocios que necesitan un sistema más potente, escalable y personalizado.',
+		includes: [
+			'Todo lo del profesional',
+			'Sistema administrable',
+			'Integraciones personalizadas',
+			'Base de datos',
+			'Panel administrativo',
+			'Automatizaciones',
+			'Catálogo dinámico',
+			'Escalabilidad',
+			'Desarrollo personalizado',
+			'Funciones avanzadas',
+			'Mayor optimización y rendimiento',
+		],
 		featured: false,
 	},
 ];
