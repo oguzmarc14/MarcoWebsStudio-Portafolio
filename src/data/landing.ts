@@ -66,7 +66,7 @@ export const processSteps = [
 export const packageItems = [
 	{
 		title: 'Básico',
-		price: 'desde $4,500 MXN',
+		price: 'desde $3,500 MXN',
 		description: 'Ideal para negocios que buscan una presencia profesional rápida y efectiva.',
 		includes: [
 			'Landing page profesional',
