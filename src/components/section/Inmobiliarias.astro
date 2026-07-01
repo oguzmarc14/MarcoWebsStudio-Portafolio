@@ -1,0 +1,235 @@
+---
+import { whatsappUrl } from '../../data/landing';
+
+const features = [
+    {
+        icon: 'fa-solid fa-house-chimney',
+        title: 'Catálogo de propiedades',
+        description: 'Publica casas, terrenos, locales, departamentos o propiedades comerciales con fotos, precio, ubicación y detalles.',
+    },
+    {
+        icon: 'fa-solid fa-map-location-dot',
+        title: 'Mapa interactivo',
+        description: 'Muestra la ubicación de cada propiedad con marcadores, colores por categoría y una experiencia fácil de entender.',
+    },
+    {
+        icon: 'fa-solid fa-sliders',
+        title: 'Filtros inteligentes',
+        description: 'Permite que tus clientes busquen por tipo de propiedad, ubicación, precio o características principales.',
+    },
+    {
+        icon: 'fa-solid fa-lock',
+        title: 'Panel administrativo',
+        description: 'Administra tus propiedades desde un panel privado sin depender de un programador para cada cambio.',
+    },
+];
+
+const stats = [
+    { value: '24/7', label: 'Propiedades visibles' },
+    { value: '1 clic', label: 'Contacto por WhatsApp' },
+    { value: '100%', label: 'Compatible con celular' },
+];
+---
+
+<section
+    id="inmobiliarias"
+    class="relative overflow-hidden bg-[#050816] py-24 sm:py-28"
+>
+    <!-- Fondo con imagen muy tenue -->
+    <div
+        class="absolute inset-0 bg-cover bg-center opacity-[0.45] mix-blend-screen"
+        style="background-image:url('/fondo-inmobiliarias.webp');"
+    ></div>
+
+    <!-- Capa vidrio -->
+    <div
+        class="absolute inset-0 backdrop-blur-[4px]"
+        style="background: rgba(5, 8, 22, 0.58);"
+    ></div>
+
+    <!-- Spotlight mouse -->
+    <div class="spotlight pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+    <!-- Gradientes premium -->
+    <div
+        class="absolute inset-0"
+        style="background: radial-gradient(ellipse 70% 55% at 20% 10%, rgba(34,211,238,0.10), transparent 55%), radial-gradient(ellipse 65% 55% at 85% 65%, rgba(14,165,233,0.08), transparent 60%);"
+    ></div>
+
+    <!-- Grid futurista -->
+    <div
+        class="pointer-events-none absolute inset-0 opacity-40"
+        style="background-image: linear-gradient(rgba(148,163,184,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.04) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);"
+    ></div>
+
+    <!-- Glow lateral -->
+    <div
+        class="pointer-events-none absolute -left-32 top-20 hidden h-[34rem] w-[34rem] rounded-full sm:block"
+        style="background: radial-gradient(circle, rgba(34,211,238,0.12), transparent 65%); filter: blur(90px);"
+    ></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+            <!-- Left content -->
+            <div class="space-y-7">
+                <div
+                    class="premium-chip inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100/90"
+                    data-reveal
+                >
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span>
+                    </span>
+                    Solución para inmobiliarias
+                </div>
+
+                <div class="space-y-4" data-reveal>
+                    <h2 class="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        Sistema web para
+                        <span class="gradient-text"> vender propiedades </span>
+                        de forma profesional.
+                    </h2>
+
+                    <p class="max-w-xl text-base leading-8 text-slate-300/90 sm:text-lg">
+                        Creamos plataformas inmobiliarias donde puedes publicar propiedades, mostrar ubicaciones en mapa,
+                        recibir mensajes por WhatsApp y administrar todo desde un panel privado.
+                    </p>
+                </div>
+
+                <div class="grid gap-3 sm:grid-cols-3" data-reveal>
+                    {stats.map((stat) => (
+                        <div class="premium-surface rounded-2xl bg-white/[0.03] p-4 backdrop-blur-xl">
+                            <p class="text-2xl font-bold text-white glow-text-subtle">{stat.value}</p>
+                            <p class="mt-1 text-xs leading-tight text-slate-400">{stat.label}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div class="flex flex-col gap-3 sm:flex-row" data-reveal>
+                    <a
+                        href={whatsappUrl}
+                        class="premium-button inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 text-base font-bold"
+                    >
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Quiero un sistema inmobiliario
+                    </a>
+
+                    <a
+                        href="#proyectos"
+                        class="premium-button-secondary inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 text-base font-semibold"
+                    >
+                        Ver ejemplo
+                        <i class="fa-solid fa-arrow-right text-xs text-cyan-300"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right visual mockup -->
+            <div class="relative" data-reveal>
+                <div
+                    class="pointer-events-none absolute inset-0 -m-8 rounded-full"
+                    style="background: radial-gradient(circle, rgba(34,211,238,0.18), transparent 62%); filter: blur(70px);"
+                ></div>
+
+                <div class="premium-surface relative overflow-hidden rounded-[2rem] p-4 backdrop-blur-xl sm:p-5">
+                    <div
+                        class="pointer-events-none absolute inset-0 opacity-60"
+                        style="background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 35%, rgba(34,211,238,0.05));"
+                    ></div>
+
+                    <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08111f]">
+                        <img
+                            src="/mapa.webp"
+                            alt="Vista de mapa interactivo para sistema inmobiliario"
+                            class="h-[260px] w-full object-cover opacity-90 sm:h-[340px] lg:h-[380px]"
+                            loading="lazy"
+                        />
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050816]/90 via-transparent to-transparent"></div>
+
+                        <div class="absolute left-4 top-4 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-xs font-semibold text-cyan-100 backdrop-blur-xl">
+                            Mapa interactivo
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[#050816]/80 p-4 backdrop-blur-xl">
+                            <p class="text-sm font-semibold text-white">Terreno en venta · Encarnación de Díaz</p>
+                            <p class="mt-1 text-xs leading-5 text-slate-400">
+                                Ubicación, fotos, precio, medidas y botón directo a WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                        <div class="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl">
+                            <img
+                                src="/registrar-terrenos.webp"
+                                alt="Catálogo de propiedades inmobiliarias"
+                                class="h-28 w-full rounded-xl object-cover opacity-90"
+                                loading="lazy"
+                            />
+                            <p class="mt-3 text-sm font-semibold text-white">Catálogo de propiedades</p>
+                            <p class="mt-1 text-xs text-slate-400">Filtros, categorías y fotos.</p>
+                        </div>
+
+                        <div class="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl">
+                            <img
+                                src="/editar-terrenos.webp"
+                                alt="Panel administrativo para inmobiliarias"
+                                class="h-28 w-full rounded-xl object-cover opacity-90"
+                                loading="lazy"
+                            />
+                            <p class="mt-3 text-sm font-semibold text-white">Panel administrador</p>
+                            <p class="mt-1 text-xs text-slate-400">Agrega y edita propiedades.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => (
+                <article class="premium-surface group rounded-[1.5rem] bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1" data-reveal>
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                        <i class={`${feature.icon} text-lg`}></i>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-white">{feature.title}</h3>
+                    <p class="mt-3 text-sm leading-7 text-slate-400">
+                        {feature.description}
+                    </p>
+                </article>
+            ))}
+        </div>
+    </div>
+
+    <script>
+        if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+            const section = document.querySelector<HTMLElement>('#inmobiliarias');
+            const spotlight = section?.querySelector<HTMLElement>('.spotlight');
+
+            if (section && spotlight) {
+                const update = (e) => {
+                    const b = section.getBoundingClientRect();
+                    const x = e.clientX - b.left;
+                    const y = e.clientY - b.top;
+
+                    spotlight.style.background = `radial-gradient(
+                        700px circle at ${x}px ${y}px,
+                        rgba(34,211,238,0.14),
+                        rgba(34,211,238,0.05) 32%,
+                        transparent 68%
+                    )`;
+                };
+
+                const reset = () => {
+                    spotlight.style.background =
+                        'radial-gradient(700px circle at 50% 30%, rgba(34,211,238,0.08), transparent 68%)';
+                };
+
+                reset();
+                section.addEventListener('mousemove', update, { passive: true });
+                section.addEventListener('mouseleave', reset);
+            }
+        }
+    </script>
+</section>
