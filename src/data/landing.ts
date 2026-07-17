@@ -39,12 +39,12 @@ export const projectItems = [
 		badges: ['Inmobiliaria', 'Ventas', 'Responsive'],
 	},
 	{
-		title: 'Venta de baterías',
-		description: 'Catálogo claro para mostrar productos, resolver dudas y llevar al cliente directo a WhatsApp.',
-		image: '/Gibs.webp',
-		alt: 'Proyecto de venta de baterías',
-		href: 'https://gibs1.vercel.app/',
-		badges: ['Catálogo', 'WhatsApp', 'Conversión'],
+		title: 'Salón Diego´s',
+		description: 'Salón de eventos con galería de fotos, información clara y botones de contacto directo para reservas.',
+		image: '/salondiegos.webp',
+		alt: 'Proyecto de salón de eventos',
+		href: 'https://salon-diegos.vercel.app/',
+		badges: ['Eventos', 'Reservas', 'Galería'],
 	},
 	{
 		title: 'Nutrióloga Alondra',
@@ -53,6 +53,22 @@ export const projectItems = [
 		alt: 'Proyecto de nutrióloga Alondra',
 		href: 'https://alondraaldananutricion.vercel.app/',
 		badges: ['Salud', 'Branding', 'Citas'],
+	},
+	{
+		title: 'AgroSutti Queso',
+		description: 'Catálogo de productos con información clara, botones de contacto y diseño moderno para una marca de alimentos.',
+		image: '/agrossuti.webp',
+		alt: 'Proyecto de catalogo de quesos',
+		href: 'https://agro-sutti-chi.vercel.app/',
+		badges: ['Comida', 'Quesos', 'Catalogo'],
+	},
+	{
+		title: 'Venta de baterías',
+		description: 'Catálogo claro para mostrar productos, resolver dudas y llevar al cliente directo a WhatsApp.',
+		image: '/Gibs.webp',
+		alt: 'Proyecto de venta de baterías',
+		href: 'https://gibs1.vercel.app/',
+		badges: ['Catálogo', 'WhatsApp', 'Conversión'],
 	},
 ];
 
