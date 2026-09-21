@@ -1,104 +1,44 @@
 ---
 import { whatsappUrl } from '../../data/landing';
+const pillars=[
+ ['fa-code','Software a medida','Soluciones diseñadas para tu operación.'],
+ ['fa-gears','Automatización','Procesos más simples. Resultados más grandes.'],
+ ['fa-chart-simple','Inteligencia aplicada','El poder de la IA en tu negocio.']
+];
 ---
-
-<header id="home" class="relative min-h-[100svh] overflow-hidden pt-20 sm:pt-24">
-    <div class="absolute inset-0" style="background: radial-gradient(ellipse 85% 60% at 65% 5%, rgba(37,99,235,0.20), transparent 55%), radial-gradient(ellipse 55% 45% at 25% 20%, rgba(34,211,238,0.11), transparent 60%), linear-gradient(180deg, #040712 0%, #07101f 60%, #0b1425 100%);"></div>
-    <div class="absolute inset-0 bg-[url('/fondo-hero.webp')] bg-cover bg-center opacity-[0.08] mix-blend-screen"></div>
-    <div class="pointer-events-none absolute inset-0 opacity-35" style="background-image: linear-gradient(rgba(148,163,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.05) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent);"></div>
-
-    <section class="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center px-4 pb-12 sm:px-6 lg:px-8">
-        <div class="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-            <div class="space-y-6 py-8 lg:py-10">
-                <div class="premium-chip inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-100/90 sm:text-xs" data-reveal>
-                    <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
-                    Software · Automatización · Tecnología
-                </div>
-
-                <div class="space-y-4" data-reveal style="--reveal-delay: 90ms;">
-                    <p class="text-xs font-semibold uppercase tracking-[0.34em] text-blue-300/80">AVANCIA</p>
-                    <h1 class="max-w-4xl text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-                        Tecnología que hace
-                        <span class="gradient-text"> avanzar tu negocio.</span>
-                    </h1>
-                </div>
-
-                <p class="max-w-2xl text-sm leading-7 text-slate-300/90 sm:text-base lg:text-lg" data-reveal style="--reveal-delay: 170ms;">
-                    Diseñamos software, sistemas y automatizaciones para empresas que quieren operar mejor, reducir tareas manuales y crecer con tecnología.
-                </p>
-
-                <div class="flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay: 250ms;">
-                    <a href={whatsappUrl} class="premium-button inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-bold sm:text-base">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        Cuéntanos tu proceso
-                    </a>
-                    <a href="#proyectos" class="premium-button-secondary inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-semibold sm:text-base">
-                        Ver proyectos
-                        <i class="fa-solid fa-arrow-right text-xs text-cyan-300"></i>
-                    </a>
-                </div>
-
-                <div class="flex flex-wrap gap-2.5 text-xs text-slate-300 sm:text-sm" data-reveal style="--reveal-delay: 300ms;">
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Software a medida</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Automatización</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Sistemas empresariales</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">IA aplicada</span>
-                </div>
-
-                <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-5" data-reveal style="--reveal-delay: 340ms;">
-                    {[
-                        { value: '+15', label: 'Proyectos entregados' },
-                        { value: 'A medida', label: 'Soluciones adaptadas' },
-                        { value: '100%', label: 'Enfoque de negocio' },
-                    ].map((stat) => (
-                        <div class="space-y-1">
-                            <p class="text-xl font-bold text-white sm:text-2xl lg:text-3xl">{stat.value}</p>
-                            <p class="text-[11px] text-slate-400 leading-tight sm:text-xs">{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div class="relative mx-auto w-full max-w-lg" data-reveal style="--reveal-delay: 140ms;">
-                <div class="pointer-events-none absolute inset-0 -m-10 rounded-full" style="background: radial-gradient(circle, rgba(37,99,235,0.2), transparent 62%); filter: blur(60px);"></div>
-                <div class="premium-surface relative rounded-[2rem] p-5 sm:p-6">
-                    <div class="flex items-center justify-between border-b border-white/8 pb-5">
-                        <div>
-                            <p class="text-[10px] font-semibold uppercase tracking-[0.34em] text-cyan-300/70">Cómo trabaja Avancia</p>
-                            <p class="mt-1.5 text-2xl font-bold text-white">Entender. Optimizar. Avanzar.</p>
-                        </div>
-                        <div class="flex h-11 w-11 items-center justify-center rounded-2xl" style="background: linear-gradient(135deg, rgba(37,99,235,.25), rgba(34,211,238,.12)); border:1px solid rgba(96,165,250,.22)">
-                            <span class="font-black text-cyan-100">A</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3 py-5">
-                        {[
-                            ['01', 'Entendemos tu operación', 'Analizamos cómo trabajas hoy y dónde se pierde tiempo, información o control.'],
-                            ['02', 'Diseñamos la solución', 'Definimos el sistema, automatización o integración que mejor resuelve el problema.'],
-                            ['03', 'Construimos para crecer', 'Implementamos una solución preparada para evolucionar con tu empresa.'],
-                        ].map((item) => (
-                            <div class="rounded-2xl border border-white/7 bg-white/[0.03] p-4">
-                                <div class="flex gap-4">
-                                    <span class="font-mono text-xs font-bold text-cyan-400">{item[0]}</span>
-                                    <div>
-                                        <p class="font-semibold text-white">{item[1]}</p>
-                                        <p class="mt-1 text-xs leading-5 text-slate-400">{item[2]}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-2 border-t border-white/8 pt-4">
-                        {['Software', 'Procesos', 'Resultados'].map((tag) => (
-                            <div class="premium-tag rounded-xl p-2.5 text-center text-[11px] font-medium text-slate-200">{tag}</div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+<header id="home" class="relative overflow-hidden bg-white pt-28">
+  <div class="absolute right-0 top-16 h-[34rem] w-[48%] bg-gradient-to-bl from-blue-50/90 via-sky-50/30 to-transparent"></div>
+  <div class="mx-auto grid min-h-[650px] max-w-7xl items-center gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+    <div class="relative z-10" data-reveal>
+      <p class="mb-5 text-xs font-bold uppercase tracking-[.25em] text-blue-600">Software · Automatización · Tecnología</p>
+      <h1 class="max-w-3xl text-5xl font-bold leading-[1.02] tracking-[-.04em] text-[#071a3d] sm:text-6xl lg:text-7xl">
+        Tecnología que hace <span class="text-gradient-blue">avanzar</span> tu negocio.
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">Desarrollamos software, sistemas y automatizaciones para empresas que quieren operar mejor, reducir tareas manuales y crecer con tecnología.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href={whatsappUrl} class="blue-button inline-flex items-center justify-center gap-3 rounded-full px-7 py-3.5 font-semibold"><i class="fa-brands fa-whatsapp"></i> Hablemos de tu proyecto <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        <a href="#proyectos" class="outline-button inline-flex items-center justify-center gap-3 rounded-full px-7 py-3.5 font-semibold">Ver proyectos <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+      <div class="mt-12 grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-3">
+        {pillars.map(p => <div class="border-l border-slate-200 pl-4 first:border-l-0 first:pl-0">
+          <i class={`fa-solid ${p[0]} mb-3 text-xl text-blue-600`}></i>
+          <h3 class="text-sm font-bold text-[#071a3d]">{p[1]}</h3>
+          <p class="mt-1 text-xs leading-5 text-slate-500">{p[2]}</p>
+        </div>)}
+      </div>
+    </div>
+    <div class="relative hidden min-h-[560px] lg:block" data-reveal>
+      <div class="absolute left-1/2 top-1/2 h-[470px] w-[390px] -translate-x-1/2 -translate-y-1/2">
+        <span class="avancia-mark avancia-mark-hero"></span>
+        <div class="absolute bottom-10 left-16 right-0 h-40 overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-br from-slate-50 to-blue-50 shadow-xl">
+          <div class="grid h-full place-items-center text-center">
+            <div><i class="fa-solid fa-building text-4xl text-blue-500/40"></i><p class="mt-3 text-sm font-semibold text-slate-500">Ideas → procesos → tecnología → resultados</p></div>
+          </div>
         </div>
-    </section>
-
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050816] to-transparent"></div>
+      </div>
+      <div class="absolute right-0 top-20 space-y-2 text-xs font-semibold uppercase tracking-[.25em] text-slate-400">
+        <p>Ideas</p><p>Procesos</p><p>Personas</p><p>Tecnología</p><p class="text-blue-500">Resultados</p>
+      </div>
+    </div>
+  </div>
 </header>
