@@ -3,14 +3,14 @@ const whatsappNumber = '523348153699';
 export const createWhatsappUrl = (message: string) =>
 	`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-export const whatsappUrl = createWhatsappUrl('Hola Marco Webs Studio, quiero cotizar una página web para mi negocio.');
+export const whatsappUrl = createWhatsappUrl('Hola AVANCIA, quiero platicarles sobre un proyecto para mi negocio.');
 
 export const navLinks = [
-	{ label: 'Beneficios', href: '#beneficios' },
+	{ label: 'Inicio', href: '#home' },
 	{ label: 'Servicios', href: '#servicios' },
 	{ label: 'Proyectos', href: '#proyectos' },
-	{ label: 'Paquetes', href: '#paquetes' },
-	{ label: 'FAQ', href: '#faq' },
+	{ label: 'Proceso', href: '#proceso' },
+	{ label: 'Contacto', href: '#contacto' },
 ];
 
 export const benefitItems = [
