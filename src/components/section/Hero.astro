@@ -3,230 +3,102 @@ import { whatsappUrl } from '../../data/landing';
 ---
 
 <header id="home" class="relative min-h-[100svh] overflow-hidden pt-20 sm:pt-24">
-    <div class="absolute inset-0" style="background: radial-gradient(ellipse 90% 65% at 50% 0%, rgba(34,211,238,0.13), transparent 55%), linear-gradient(180deg, #050816 0%, #080f1f 60%, #0f172a 100%);"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 85% 60% at 65% 5%, rgba(37,99,235,0.20), transparent 55%), radial-gradient(ellipse 55% 45% at 25% 20%, rgba(34,211,238,0.11), transparent 60%), linear-gradient(180deg, #040712 0%, #07101f 60%, #0b1425 100%);"></div>
+    <div class="absolute inset-0 bg-[url('/fondo-hero.webp')] bg-cover bg-center opacity-[0.08] mix-blend-screen"></div>
+    <div class="pointer-events-none absolute inset-0 opacity-35" style="background-image: linear-gradient(rgba(148,163,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.05) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent);"></div>
 
-    <div class="absolute inset-0 bg-[url('/fondo-hero.webp')] bg-cover bg-center opacity-[0.14] mix-blend-screen"></div>
-
-    <div class="pointer-events-none absolute inset-0 opacity-50"
-        style="background-image: linear-gradient(rgba(148,163,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.05) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent);"></div>
-
-    <div class="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
-        style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.9) 1px, transparent 0); background-size: 28px 28px;"></div>
-
-    <div class="hidden sm:block pointer-events-none absolute -left-32 top-20 h-[38rem] w-[38rem] rounded-full animate-aurora"
-        style="background: radial-gradient(circle, rgba(34,211,238,0.13), transparent 65%); filter: blur(80px);"></div>
-
-    <div class="hidden sm:block pointer-events-none absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full animate-aurora-alt"
-        style="background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 65%); filter: blur(100px);"></div>
-
-    <div class="hidden sm:block pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 h-[50rem] w-[60rem] rounded-full animate-pulse-glow"
-        style="background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 55%); filter: blur(120px);"></div>
-
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-px w-full animate-scan"
-        style="background: linear-gradient(90deg, transparent, rgba(34,211,238,0.6), transparent);"></div>
-
-    <div class="hidden sm:block pointer-events-none absolute inset-0 overflow-hidden">
-        <div class="particle" style="left:12%; top:18%; animation-delay:0s;"></div>
-        <div class="particle" style="left:27%; top:65%; animation-delay:1.2s;"></div>
-        <div class="particle" style="left:55%; top:22%; animation-delay:2.4s;"></div>
-        <div class="particle" style="left:73%; top:55%; animation-delay:0.8s;"></div>
-        <div class="particle" style="left:88%; top:30%; animation-delay:3.1s;"></div>
-        <div class="particle" style="left:42%; top:80%; animation-delay:1.9s;"></div>
-        <div class="particle-lg" style="left:6%; top:45%; animation-delay:0.5s;"></div>
-        <div class="particle-lg" style="left:92%; top:70%; animation-delay:2.8s;"></div>
-    </div>
-
-    <section
-        id="hero-spotlight"
-        class="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center overflow-hidden px-4 pb-10 sm:px-6 lg:px-8"
-        style="--x: 50%; --y: 30%;"
-    >
-        <div class="spotlight pointer-events-none absolute inset-0" aria-hidden="true"></div>
-
-        <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#050816] to-transparent"></div>
-
-        <div class="relative grid w-full items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
-            <div class="space-y-5 py-8 lg:py-10">
-                <div class="premium-chip inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-100/90 animate-pulse-glow sm:text-xs" data-reveal style="--reveal-delay: 0ms;">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                        <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span>
-                    </span>
-                    Disponible para nuevos proyectos
+    <section class="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center px-4 pb-12 sm:px-6 lg:px-8">
+        <div class="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+            <div class="space-y-6 py-8 lg:py-10">
+                <div class="premium-chip inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-100/90 sm:text-xs" data-reveal>
+                    <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+                    Software · Automatización · Tecnología
                 </div>
 
-                <div class="space-y-3" data-reveal style="--reveal-delay: 100ms;">
-                    <h1 class="text-4xl font-bold leading-[1.03] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-                        <span class="gradient-text-subtle">Páginas web</span>
-                        <br />
-                        <span class="glow-text text-white">y sistemas</span>
-                        <br />
-                        <span class="gradient-text">que impulsan negocios.</span>
+                <div class="space-y-4" data-reveal style="--reveal-delay: 90ms;">
+                    <p class="text-xs font-semibold uppercase tracking-[0.34em] text-blue-300/80">AVANCIA</p>
+                    <h1 class="max-w-4xl text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                        Tecnología que hace
+                        <span class="gradient-text"> avanzar tu negocio.</span>
                     </h1>
                 </div>
 
-                <p class="max-w-xl text-sm leading-7 text-slate-300/90 sm:text-base lg:text-lg" data-reveal style="--reveal-delay: 180ms;">
-                    Desarrollamos páginas web, sistemas administrativos y software a medida para empresas que buscan vender más, automatizar procesos y destacar en el mundo digital.
+                <p class="max-w-2xl text-sm leading-7 text-slate-300/90 sm:text-base lg:text-lg" data-reveal style="--reveal-delay: 170ms;">
+                    Diseñamos software, sistemas y automatizaciones para empresas que quieren operar mejor, reducir tareas manuales y crecer con tecnología.
                 </p>
 
-                <div class="flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay: 260ms;">
-                    <a href={whatsappUrl}
-                        class="premium-button inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-bold sm:text-base">
+                <div class="flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay: 250ms;">
+                    <a href={whatsappUrl} class="premium-button inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-bold sm:text-base">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
-                        Cotizar por WhatsApp
+                        Cuéntanos tu proceso
                     </a>
-
-                    <a href="#proyectos"
-                        class="premium-button-secondary inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-semibold sm:text-base">
+                    <a href="#proyectos" class="premium-button-secondary inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-3.5 text-sm font-semibold sm:text-base">
                         Ver proyectos
                         <i class="fa-solid fa-arrow-right text-xs text-cyan-300"></i>
                     </a>
                 </div>
 
                 <div class="flex flex-wrap gap-2.5 text-xs text-slate-300 sm:text-sm" data-reveal style="--reveal-delay: 300ms;">
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">✓ Páginas web</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">✓ Sistemas</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">✓ Inmobiliarias</span>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">✓ Automatización</span>
+                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Software a medida</span>
+                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Automatización</span>
+                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Sistemas empresariales</span>
+                    <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">IA aplicada</span>
                 </div>
 
                 <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-5" data-reveal style="--reveal-delay: 340ms;">
                     {[
                         { value: '+15', label: 'Proyectos entregados' },
-                        { value: '< 2s', label: 'Tiempo de carga' },
-                        { value: '100%', label: 'Responsive' },
+                        { value: 'A medida', label: 'Soluciones adaptadas' },
+                        { value: '100%', label: 'Enfoque de negocio' },
                     ].map((stat) => (
                         <div class="space-y-1">
-                            <p class="text-xl font-bold text-white glow-text-subtle sm:text-2xl lg:text-3xl">{stat.value}</p>
+                            <p class="text-xl font-bold text-white sm:text-2xl lg:text-3xl">{stat.value}</p>
                             <p class="text-[11px] text-slate-400 leading-tight sm:text-xs">{stat.label}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div class="relative mx-auto w-full max-w-md lg:max-w-lg" data-reveal style="--reveal-delay: 160ms;">
-                <div class="pointer-events-none absolute inset-0 -m-8 rounded-full animate-pulse-glow"
-                    style="background: radial-gradient(circle, rgba(34,211,238,0.2), transparent 60%); filter: blur(60px);"></div>
-
-                <div class="premium-surface relative rounded-[1.75rem] p-5 sm:p-6">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] opacity-60"
-                        style="background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.04) 100%);"></div>
-
-                    <div class="flex items-center justify-between border-b border-white/8 pb-4">
+            <div class="relative mx-auto w-full max-w-lg" data-reveal style="--reveal-delay: 140ms;">
+                <div class="pointer-events-none absolute inset-0 -m-10 rounded-full" style="background: radial-gradient(circle, rgba(37,99,235,0.2), transparent 62%); filter: blur(60px);"></div>
+                <div class="premium-surface relative rounded-[2rem] p-5 sm:p-6">
+                    <div class="flex items-center justify-between border-b border-white/8 pb-5">
                         <div>
-                            <p class="text-[10px] font-semibold uppercase tracking-[0.35em] text-cyan-300/70">Soluciones digitales</p>
-                            <p class="mt-1.5 text-xl font-bold text-white">Marco Webs Studio</p>
+                            <p class="text-[10px] font-semibold uppercase tracking-[0.34em] text-cyan-300/70">Cómo trabaja Avancia</p>
+                            <p class="mt-1.5 text-2xl font-bold text-white">Entender. Optimizar. Avanzar.</p>
                         </div>
-
-                        <div class="flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-xs font-semibold text-cyan-200"
-                            style="box-shadow: 0 0 20px rgba(34,211,238,0.12);">
-                            <span class="relative flex h-2 w-2">
-                                <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-                            </span>
-                            Disponible
+                        <div class="flex h-11 w-11 items-center justify-center rounded-2xl" style="background: linear-gradient(135deg, rgba(37,99,235,.25), rgba(34,211,238,.12)); border:1px solid rgba(96,165,250,.22)">
+                            <span class="font-black text-cyan-100">A</span>
                         </div>
                     </div>
 
-                    <div class="grid gap-3 py-4 sm:grid-cols-2">
-                        <div class="premium-surface rounded-2xl bg-[#050816]/50 p-4">
-                            <p class="text-xs font-medium text-slate-400">Desarrollo web</p>
-                            <p class="mt-2 text-lg font-bold text-white leading-tight">Páginas profesionales</p>
-                            <p class="mt-2 text-xs leading-5 text-slate-400">
-                                Sitios rápidos, modernos y enfocados en convertir visitas en clientes.
-                            </p>
-                        </div>
-
-                        <div class="premium-surface rounded-2xl bg-[#050816]/50 p-4">
-                            <p class="text-xs font-medium text-slate-400">Software empresarial</p>
-                            <p class="mt-2 text-lg font-bold text-white leading-tight">Sistemas personalizados</p>
-                            <p class="mt-2 text-xs leading-5 text-slate-400">
-                                Paneles, inventarios, catálogos y plataformas hechas a la medida.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-2 border-t border-white/8 pt-4 text-xs">
-                        {['Páginas web', 'Sistemas', 'Software a medida'].map((tag) => (
-                            <div class="premium-tag rounded-xl p-2.5 text-center font-medium text-slate-200 text-[11px]">{tag}</div>
+                    <div class="space-y-3 py-5">
+                        {[
+                            ['01', 'Entendemos tu operación', 'Analizamos cómo trabajas hoy y dónde se pierde tiempo, información o control.'],
+                            ['02', 'Diseñamos la solución', 'Definimos el sistema, automatización o integración que mejor resuelve el problema.'],
+                            ['03', 'Construimos para crecer', 'Implementamos una solución preparada para evolucionar con tu empresa.'],
+                        ].map((item) => (
+                            <div class="rounded-2xl border border-white/7 bg-white/[0.03] p-4">
+                                <div class="flex gap-4">
+                                    <span class="font-mono text-xs font-bold text-cyan-400">{item[0]}</span>
+                                    <div>
+                                        <p class="font-semibold text-white">{item[1]}</p>
+                                        <p class="mt-1 text-xs leading-5 text-slate-400">{item[2]}</p>
+                                    </div>
+                                </div>
+                            </div>
                         ))}
                     </div>
 
-                    <div class="mt-4 flex items-center justify-between rounded-xl border border-white/5 bg-white/3 px-4 py-3">
-                        <span class="text-[10px] font-medium uppercase tracking-widest text-slate-500">Tecnologías modernas</span>
-                        <div class="flex items-center gap-3 text-slate-400 text-xs font-medium">
-                            <span class="text-cyan-400/80">Astro</span>
-                            <span class="h-px w-3 bg-white/10"></span>
-                            <span class="text-sky-400/80">Angular</span>
-                            <span class="h-px w-3 bg-white/10"></span>
-                            <span class="text-blue-400/80">Node.js</span>
-                        </div>
+                    <div class="grid grid-cols-3 gap-2 border-t border-white/8 pt-4">
+                        {['Software', 'Procesos', 'Resultados'].map((tag) => (
+                            <div class="premium-tag rounded-xl p-2.5 text-center text-[11px] font-medium text-slate-200">{tag}</div>
+                        ))}
                     </div>
                 </div>
-
-                <div class="pointer-events-none absolute -bottom-6 -right-6 h-32 w-32 rounded-full"
-                    style="background: radial-gradient(circle, rgba(34,211,238,0.15), transparent 70%); filter: blur(24px);"></div>
             </div>
         </div>
     </section>
 
     <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050816] to-transparent"></div>
-
-    <script>
-        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-            const hero = document.querySelector<HTMLElement>('#hero-spotlight');
-            const spotlight = hero?.querySelector<HTMLElement>('.spotlight');
-
-            if (hero && spotlight) {
-                const update = (e) => {
-                    const b = hero.getBoundingClientRect();
-                    const x = e.clientX - b.left;
-                    const y = e.clientY - b.top;
-                    spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(34,211,238,0.12), rgba(34,211,238,0.04) 30%, transparent 65%)`;
-                };
-
-                const reset = () => {
-                    spotlight.style.background = 'radial-gradient(600px circle at 50% 30%, rgba(34,211,238,0.07), transparent 65%)';
-                };
-
-                reset();
-                hero.addEventListener('mousemove', update, { passive: true });
-                hero.addEventListener('mouseleave', reset);
-            }
-        }
-    </script>
 </header>
-
-<style>
-    .particle {
-        position: absolute;
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background: rgba(103, 232, 249, 0.7);
-        box-shadow: 0 0 8px rgba(34, 211, 238, 0.8);
-        animation: float 8s ease-in-out infinite;
-    }
-
-    .particle-lg {
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: rgba(34, 211, 238, 0.5);
-        box-shadow: 0 0 14px rgba(34, 211, 238, 0.6);
-        animation: float 12s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0px) scale(1);
-            opacity: 0.7;
-        }
-
-        50% {
-            transform: translateY(-18px) scale(1.2);
-            opacity: 1;
-        }
-    }
-</style> 
