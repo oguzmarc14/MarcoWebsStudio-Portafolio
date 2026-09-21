@@ -4,102 +4,71 @@ import "../styles/global.css";
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href="/logo.webp" type="image/webp" />
-		<link rel="icon" href="/logo.png" type="image/png" />
-		<link rel="apple-touch-icon" href="/logo.png" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#050816" />
-		<meta
-			name="description"
-			content="Marco Webs Studio diseña páginas web modernas, rápidas y enfocadas en convertir visitas en clientes para negocios pequeños y medianos."
-		/>
-		<title>Marco Webs Studio | Páginas web modernas que venden más</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/logo.webp" type="image/webp" />
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#050816" />
+        <meta
+            name="description"
+            content="AVANCIA desarrolla software, sistemas y automatizaciones para empresas que quieren operar mejor, reducir tareas manuales y crecer con tecnología."
+        />
+        <title>AVANCIA | Software, automatización y tecnología para empresas</title>
 
-		<!-- Google Fonts: Space Grotesk + Inter -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-	</head>
-	<body class="relative isolate overflow-x-hidden bg-[#050816] text-white antialiased">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </head>
+    <body class="relative isolate overflow-x-hidden bg-[#050816] text-white antialiased">
+        <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,0.12), transparent), radial-gradient(ellipse 45% 35% at 85% 12%, rgba(34,211,238,0.08), transparent), linear-gradient(180deg, #040712 0%, #07101f 50%, #0a1628 100%);"></div>
+            <div class="hidden sm:block absolute rounded-full animate-aurora" style="left: -18rem; top: 5rem; width: 52rem; height: 52rem; background: radial-gradient(circle, rgba(37,99,235,0.11), transparent 68%); filter: blur(80px);"></div>
+            <div class="hidden sm:block absolute rounded-full animate-aurora-alt" style="right: -16rem; top: -8rem; width: 46rem; height: 46rem; background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 68%); filter: blur(90px);"></div>
+            <div class="hidden sm:block absolute inset-0 animate-grid-move opacity-[0.04]" style="background-image: linear-gradient(rgba(148,163,184,1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,1) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);"></div>
+            <div class="hidden sm:block noise-overlay"></div>
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 80% at 50% 50%, transparent 40%, rgba(5,8,22,0.55) 100%);"></div>
+        </div>
 
-		<!-- ── GLOBAL AMBIENT BACKGROUND ─────────────────── -->
-		<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div class="relative z-10"><slot /></div>
 
-			<!-- Base gradient -->
-			<div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(34,211,238,0.09), transparent), linear-gradient(180deg, #050816 0%, #080f1f 50%, #0a1628 100%);"></div>
+        <script>
+            const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+            if (revealTargets.length > 0) {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+                    revealTargets.forEach((el) => el.classList.add('is-visible'));
+                } else {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+                    revealTargets.forEach((el) => observer.observe(el));
+                }
+            }
 
-			<!-- Aurora blobs (hidden on small screens) -->
-			<div class="hidden sm:block absolute rounded-full animate-aurora" style="left: -18rem; top: 5rem; width: 52rem; height: 52rem; background: radial-gradient(circle, rgba(34,211,238,0.09), transparent 68%); filter: blur(80px);"></div>
-			<div class="hidden sm:block absolute rounded-full animate-aurora-alt" style="right: -16rem; top: -8rem; width: 46rem; height: 46rem; background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 68%); filter: blur(90px);"></div>
-			<div class="hidden sm:block absolute rounded-full animate-float-slow" style="left: 30%; bottom: -20rem; width: 44rem; height: 44rem; background: radial-gradient(circle, rgba(15,23,42,0.6), rgba(34,211,238,0.05), transparent 68%); filter: blur(100px);"></div>
-			<div class="hidden sm:block absolute rounded-full animate-float-med" style="right: 20%; top: 40%; width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(103,232,249,0.06), transparent 68%); filter: blur(80px);"></div>
-
-			<!-- Animated grid (hidden on small screens) -->
-			<div class="hidden sm:block absolute inset-0 animate-grid-move opacity-[0.04]" style="background-image: linear-gradient(rgba(148,163,184,1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,1) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);"></div>
-
-			<!-- Noise overlay (reduced on small screens) -->
-			<div class="hidden sm:block noise-overlay"></div>
-
-			<!-- Radial vignette -->
-			<div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 80% at 50% 50%, transparent 40%, rgba(5,8,22,0.55) 100%);"></div>
-		</div>
-
-		<!-- ── PAGE CONTENT ───────────────────────────────── -->
-		<div class="relative z-10">
-			<slot />
-		</div>
-
-		<!-- ── SCRIPTS ────────────────────────────────────── -->
-		<script>
-			// Scroll reveal
-			const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
-
-			if (revealTargets.length > 0) {
-				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-					revealTargets.forEach((el) => el.classList.add('is-visible'));
-				} else {
-					const observer = new IntersectionObserver(
-						(entries) => {
-							entries.forEach((entry) => {
-								if (entry.isIntersecting) {
-									entry.target.classList.add('is-visible');
-									observer.unobserve(entry.target);
-								}
-							});
-						},
-						{ threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
-					);
-					revealTargets.forEach((el) => observer.observe(el));
-				}
-			}
-
-			// Navbar scroll effect
-			const navbar = document.querySelector<HTMLElement>('#main-navbar');
-			if (navbar) {
-				let lastScroll = 0;
-				window.addEventListener('scroll', () => {
-					const y = window.scrollY;
-					if (y > 60) {
-						navbar.setAttribute('data-scrolled', 'true');
-					} else {
-						navbar.removeAttribute('data-scrolled');
-					}
-					lastScroll = y;
-				}, { passive: true });
-			}
-		</script>
-	</body>
+            const navbar = document.querySelector<HTMLElement>('#main-navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 60) navbar.setAttribute('data-scrolled', 'true');
+                    else navbar.removeAttribute('data-scrolled');
+                }, { passive: true });
+            }
+        </script>
+    </body>
 </html>
 
 <style>
-	html, body {
-		margin: 0;
-		width: 100%;
-		min-height: 100%;
-	}
+    html, body {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+    }
 </style>
