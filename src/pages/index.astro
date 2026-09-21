@@ -1,28 +1,21 @@
 ---
-import Hero from '../components/section/Hero.astro';
-import Proyectos from '../components/section/Proyectos.astro';
-import Beneficios from '../components/section/Beneficios.astro';
-import Servicios from '../components/section/Servicios.astro';
-import ComoTrabajo from '../components/section/ComoTrabajo.astro';
-import Paquetes from '../components/section/Paquetes.astro';
-import CTA from '../components/section/CTA.astro';
-import FAQ from '../components/section/FAQ.astro';
-import Navbar from '../components/ui/Navbar.astro';
-import Footer from '../components/ui/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import Inmobiliarias from '../components/section/Inmobiliarias.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Hero from '../components/section/Hero.astro';
+import Servicios from '../components/section/Servicios.astro';
+import Proyectos from '../components/section/Proyectos.astro';
+import ComoTrabajo from '../components/section/ComoTrabajo.astro';
+import CTA from '../components/section/CTA.astro';
+import Footer from '../components/ui/Footer.astro';
 ---
-
 <Layout>
-	<Navbar />
-	<Hero />
-	<Beneficios />
-	<Servicios />
-	<Proyectos />
-	<Inmobiliarias />
-	<ComoTrabajo />
-	<Paquetes />
-	<CTA />
-	<FAQ />
-	<Footer />
+  <Navbar />
+  <main>
+    <Hero />
+    <Servicios />
+    <Proyectos />
+    <ComoTrabajo />
+    <CTA />
+  </main>
+  <Footer />
 </Layout>
