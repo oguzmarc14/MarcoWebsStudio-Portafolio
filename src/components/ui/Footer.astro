@@ -1,93 +1,14 @@
 ---
 import { socialLinks, whatsappUrl } from '../../data/landing';
 ---
-
-<footer class="relative px-4 pt-16 pb-10 sm:px-6 lg:px-8" data-reveal>
-    <div class="mx-auto max-w-7xl"><div class="section-divider mb-16"></div></div>
-
-    <div class="mx-auto max-w-7xl">
-        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
-            <div class="space-y-5">
-                <a href="#home" class="group inline-flex items-center gap-3">
-                    <div class="flex h-10 w-10 items-center justify-center rounded-xl"
-                        style="background: linear-gradient(135deg, #0b52ff 0%, #00d4ff 100%); box-shadow: 0 0 24px rgba(37,99,235,0.2);">
-                        <span class="text-sm font-black text-white">A</span>
-                    </div>
-                    <div>
-                        <p class="text-base font-bold tracking-[0.14em] text-white">AVANCIA</p>
-                        <p class="text-[11px] text-slate-500 font-medium tracking-wide">Software · Automatización · Tecnología</p>
-                    </div>
-                </a>
-                <p class="max-w-sm text-sm leading-6 text-slate-500">
-                    Tecnología que hace avanzar tu negocio. Diseñamos soluciones digitales enfocadas en mejorar procesos, reducir tareas manuales y crear nuevas capacidades.
-                </p>
-
-                <div class="flex items-center gap-3">
-                    {[
-                        { label: 'WhatsApp', href: whatsappUrl, icon: 'fa-brands fa-whatsapp' },
-                        ...socialLinks.map(s => ({
-                            label: s.label,
-                            href: s.href,
-                            icon: s.label === 'Instagram' ? 'fa-brands fa-instagram' : s.label === 'Facebook' ? 'fa-brands fa-facebook' : 'fa-brands fa-tiktok'
-                        }))
-                    ].map((social) => (
-                        <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}
-                            class="flex h-9 w-9 items-center justify-center rounded-xl text-slate-400 transition-all duration-300 hover:text-cyan-300 hover:scale-110"
-                            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                            <i class={`${social.icon} text-sm`}></i>
-                        </a>
-                    ))}
-                </div>
-            </div>
-
-            <div class="space-y-4">
-                <p class="text-xs font-bold uppercase tracking-[0.28em] text-slate-500">Capacidades</p>
-                <ul class="space-y-2.5">
-                    {['Software a medida', 'Automatización', 'Sistemas empresariales', 'IA aplicada'].map((item) => (
-                        <li><a href="#servicios" class="footer-link text-sm text-slate-400 transition-colors hover:text-white">{item}</a></li>
-                    ))}
-                </ul>
-            </div>
-
-            <div class="space-y-4">
-                <p class="text-xs font-bold uppercase tracking-[0.28em] text-slate-500">Contacto</p>
-                <ul class="space-y-2.5">
-                    <li>
-                        <a href={whatsappUrl} class="footer-link inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white">
-                            <i class="fa-brands fa-whatsapp text-cyan-400/70 text-sm"></i>
-                            WhatsApp directo
-                        </a>
-                    </li>
-                    {socialLinks.map((social) => (
-                        <li>
-                            <a href={social.href} target="_blank" rel="noopener noreferrer"
-                                class="footer-link text-sm text-slate-400 transition-colors hover:text-white">
-                                {social.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-
-        <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-            <p class="text-xs text-slate-600">© {new Date().getFullYear()} AVANCIA · Todos los derechos reservados.</p>
-            <p class="text-xs text-slate-600">Hecho en México</p>
-        </div>
-    </div>
+<footer class="border-t border-slate-100 bg-white px-4 pb-8 pt-14 sm:px-6 lg:px-8">
+ <div class="mx-auto max-w-7xl">
+  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+   <div><a href="#home" class="flex items-center gap-3"><span class="avancia-mark avancia-mark-sm"></span><span class="text-xl font-bold tracking-[.12em] text-[#061735]">AVANCIA</span></a><p class="mt-4 max-w-xs text-sm text-slate-500">Tecnología que hace avanzar tu negocio.</p><div class="mt-5 flex gap-3">{socialLinks.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-blue-600"><i class={s.label==='Instagram'?'fa-brands fa-instagram':s.label==='Facebook'?'fa-brands fa-facebook':'fa-brands fa-tiktok'}></i></a>)}<a href={whatsappUrl} class="text-slate-500 hover:text-blue-600"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+   <div><h3 class="font-bold text-[#071a3d]">Navegación</h3><div class="mt-4 space-y-2 text-sm text-slate-500"><a class="block hover:text-blue-600" href="#home">Inicio</a><a class="block hover:text-blue-600" href="#servicios">Servicios</a><a class="block hover:text-blue-600" href="#proyectos">Proyectos</a><a class="block hover:text-blue-600" href="#proceso">Proceso</a></div></div>
+   <div><h3 class="font-bold text-[#071a3d]">Servicios</h3><div class="mt-4 space-y-2 text-sm text-slate-500"><p>Software a medida</p><p>Automatización</p><p>Inteligencia aplicada</p><p>Desarrollo web</p></div></div>
+   <div><h3 class="font-bold text-[#071a3d]">Contacto</h3><div class="mt-4 space-y-3 text-sm text-slate-500"><a href={whatsappUrl} class="block hover:text-blue-600"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a><p><i class="fa-solid fa-envelope mr-2"></i>Hablemos de tu proyecto</p></div></div>
+  </div>
+  <div class="mt-12 flex flex-col justify-between gap-3 border-t border-slate-100 pt-6 text-xs text-slate-400 sm:flex-row"><p>© {new Date().getFullYear()} AVANCIA. Todos los derechos reservados.</p><p class="uppercase tracking-[.15em]">Ideas · Procesos · Personas · Tecnología · Resultados</p></div>
+ </div>
 </footer>
-
-<style>
-    .footer-link { position: relative; }
-    .footer-link::after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: linear-gradient(90deg, #2563eb, #22d3ee);
-        transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .footer-link:hover::after { width: 100%; }
-</style>
