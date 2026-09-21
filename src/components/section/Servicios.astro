@@ -1,91 +1,20 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-
-const services = [
-    {
-        title: 'Software a medida',
-        description: 'Sistemas administrativos, plataformas, paneles y herramientas creadas alrededor de la operación real de tu empresa.',
-        icon: 'fa-code',
-    },
-    {
-        title: 'Automatización de procesos',
-        description: 'Reducimos tareas manuales conectando flujos, formularios, documentos, WhatsApp y herramientas de trabajo.',
-        icon: 'fa-gears',
-    },
-    {
-        title: 'Sistemas empresariales',
-        description: 'Clientes, ventas, pagos, inventarios, operaciones, reportes y permisos en una misma solución.',
-        icon: 'fa-chart-line',
-    },
-    {
-        title: 'Integraciones',
-        description: 'Conectamos tus plataformas y datos para evitar duplicidad de trabajo y mejorar la continuidad de la información.',
-        icon: 'fa-link',
-    },
-    {
-        title: 'IA aplicada',
-        description: 'Incorporamos inteligencia artificial cuando realmente aporta valor a la atención, análisis o automatización de tu negocio.',
-        icon: 'fa-brain',
-    },
+const services=[
+ ['fa-code','Software a medida','Sistemas, plataformas y aplicaciones diseñadas para tu operación.'],
+ ['fa-gears','Automatización','Conectamos tus procesos, herramientas y datos para ahorrar tiempo y costos.'],
+ ['fa-chart-simple','Inteligencia aplicada','Implementamos IA donde realmente genera valor en tu negocio.'],
+ ['fa-layer-group','Desarrollo web','Sitios web y soluciones digitales modernas, rápidas y escalables.']
 ];
 ---
-
-<section id="servicios" class="relative px-4 py-28 sm:px-6 lg:px-8">
-    <div class="pointer-events-none absolute right-0 top-1/2 h-[40rem] w-[30rem] -translate-y-1/2 rounded-full opacity-20"
-        style="background: radial-gradient(circle, rgba(37,99,235,0.13), transparent 65%); filter: blur(80px);"></div>
-
-    <div class="relative mx-auto max-w-7xl">
-        <div class="grid gap-16 lg:grid-cols-[1fr_1.5fr] lg:items-start">
-            <div class="lg:sticky lg:top-32">
-                <SectionHeading
-                    eyebrow="Capacidades"
-                    title="Tecnología construida alrededor de tu negocio."
-                    description="No empezamos por la herramienta. Empezamos por entender el problema y diseñar una solución que mejore tu operación."
-                />
-
-                <div class="mt-8 space-y-3">
-                    <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">Nuestro enfoque</p>
-                    {['Diagnóstico del proceso', 'Diseño de solución', 'Desarrollo e integración', 'Implementación y mejora'].map((step, i) => (
-                        <div class="flex items-center gap-3 text-sm text-slate-400">
-                            <span class="flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-cyan-400"
-                                style="background: rgba(37,99,235,0.12); border: 1px solid rgba(96,165,250,0.22);">
-                                {i + 1}
-                            </span>
-                            {step}
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div class="space-y-3">
-                {services.map((service, index) => (
-                    <div
-                        class="group relative overflow-hidden rounded-2xl px-6 py-5 transition-all duration-300"
-                        style="background: linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.07);"
-                        data-reveal
-                        style={`--reveal-delay: ${index * 80}ms;`}
-                    >
-                        <div class="absolute left-0 top-0 h-full w-0.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                            style="background: linear-gradient(180deg, transparent, rgba(37,99,235,0.85), rgba(34,211,238,0.75), transparent);"></div>
-
-                        <div class="relative flex items-start justify-between gap-6">
-                            <div class="flex items-start gap-5">
-                                <span class="mt-0.5 font-mono text-xs font-bold text-blue-400/60">
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
-                                <div>
-                                    <h3 class="text-base font-bold text-white/90">{service.title}</h3>
-                                    <p class="mt-1.5 text-sm leading-6 text-slate-500">{service.description}</p>
-                                </div>
-                            </div>
-                            <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl"
-                                style="background: rgba(37,99,235,0.1); border: 1px solid rgba(96,165,250,0.16);">
-                                <i class={`fa-solid ${service.icon} text-blue-300/80 text-sm`}></i>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </div>
+<section id="servicios" class="bg-[#fbfdff] px-4 py-24 sm:px-6 lg:px-8">
+ <div class="mx-auto max-w-7xl">
+  <div class="text-center"><p class="text-xs font-bold uppercase tracking-[.24em] text-blue-600">Nuestras soluciones</p><h2 class="mt-3 text-3xl font-bold text-[#071a3d] sm:text-5xl">Tecnología real para <span class="text-gradient-blue">negocios reales.</span></h2><p class="mt-4 text-slate-500">Adaptamos cada solución a las necesidades de tu empresa.</p></div>
+  <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+   {services.map((s,i)=><article class="light-card p-7" data-reveal style={`--reveal-delay:${i*70}ms`}><div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50"><i class={`fa-solid ${s[0]} text-xl text-blue-600`}></i></div><h3 class="text-lg font-bold text-[#071a3d]">{s[1]}</h3><p class="mt-3 text-sm leading-6 text-slate-500">{s[2]}</p><a href="#contacto" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600">Conocer más <i class="fa-solid fa-arrow-right text-xs"></i></a></article>)}
+  </div>
+  <div class="mt-10 grid overflow-hidden rounded-2xl border border-blue-100 bg-blue-50/50 sm:grid-cols-4">
+   {[['+15','Proyectos realizados'],['100%','Soluciones a medida'],['24/7','Tecnología disponible'],['∞','Posibilidades de crecimiento']].map((x,i)=><div class="px-5 py-6 text-center sm:border-r sm:border-blue-100 sm:last:border-r-0"><p class="text-3xl font-bold text-blue-600">{x[0]}</p><p class="mt-1 text-xs text-slate-500">{x[1]}</p></div>)}
+  </div>
+ </div>
 </section>
