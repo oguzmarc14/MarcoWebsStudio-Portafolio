@@ -8,7 +8,7 @@ import { navLinks, whatsappUrl } from '../../data/landing';
       <span class="text-xl font-bold tracking-[.12em] text-[#061735]">AVANCIA</span>
     </a>
     <div class="hidden items-center gap-7 md:flex">
-      {navLinks.map(item => <a href={item.href} class="text-sm font-medium text-slate-600 transition hover:text-blue-600">{item.label}</a>)}
+      {navLinks.map((item,index) => <a href={item.href} class={`relative text-sm font-medium transition hover:text-blue-600 ${index===0?'text-[#071a3d] after:absolute after:-bottom-3 after:left-0 after:h-[2px] after:w-full after:bg-blue-500':'text-slate-600'}`}>{item.label}</a>)}
     </div>
     <a href={whatsappUrl} class="blue-button inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold">
       <i class="fa-brands fa-whatsapp"></i><span class="hidden sm:inline">Hablemos</span>
