@@ -31,6 +31,15 @@ export const serviceItems = [
 
 export const projectItems = [
 	{
+		title: 'NutriA',
+		description: 'Sistema de gestión nutricional para administrar pacientes, planes alimenticios, mediciones y seguimiento de progreso.',
+		image: '/nutria.webp',
+		alt: 'Proyecto NutriA, sistema de gestión nutricional',
+		href: '',
+		status: 'En proceso',
+		badges: ['React', 'Node.js', 'MongoDB'],
+	},
+	{
 		title: 'Agencia de terrenos',
 		description: 'Un sitio enfocado en venta de propiedades, lotes y oportunidades de venta.',
 		image: '/Noe.webp',
@@ -69,15 +78,6 @@ export const projectItems = [
 		alt: 'Proyecto de venta de baterías',
 		href: 'https://gibs1.vercel.app/',
 		badges: ['Catálogo', 'WhatsApp', 'Conversión'],
-	},
-	{
-		title: 'NutriA',
-		description: 'Sistema de gestión nutricional para administrar pacientes, planes alimenticios, mediciones y seguimiento de progreso.',
-		image: '/nutria.webp',
-		alt: 'Proyecto NutriA, sistema de gestión nutricional',
-		href: '',
-		status: 'En desarrollo',
-		badges: ['React', 'Node.js', 'MongoDB'],
 	},
 ];
 
