@@ -70,6 +70,15 @@ export const projectItems = [
 		href: 'https://gibs1.vercel.app/',
 		badges: ['Catálogo', 'WhatsApp', 'Conversión'],
 	},
+	{
+		title: 'NutriA',
+		description: 'Sistema de gestión nutricional para administrar pacientes, planes alimenticios, mediciones y seguimiento de progreso.',
+		image: '/nutria.webp',
+		alt: 'Proyecto NutriA, sistema de gestión nutricional',
+		href: '',
+		status: 'En desarrollo',
+		badges: ['React', 'Node.js', 'MongoDB'],
+	},
 ];
 
 export const processSteps = [

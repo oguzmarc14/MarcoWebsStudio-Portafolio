@@ -38,7 +38,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
                             <div class="browser-dot" style="background: #27c93f;"></div>
                             <div class="ml-3 flex h-5 flex-1 items-center rounded-md px-2 text-[10px] text-slate-500"
                                 style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                {project.href.replace('https://', '')}
+                                {project.href ? project.href.replace('https://', '') : project.status}
                             </div>
                         </div>
 
@@ -57,13 +57,15 @@ import SectionHeading from '../ui/SectionHeading.astro';
                             <!-- Hover overlay with info -->
                             <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-400 group-hover:opacity-100"
                                 style="background: rgba(5,8,22,0.5); backdrop-filter: blur(2px);">
-                                <a href={project.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="premium-button inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold translate-y-4 transition-transform duration-400 group-hover:translate-y-0">
-                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                                    Ver en vivo
-                                </a>
+                                {project.href && (
+                                    <a href={project.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="premium-button inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold translate-y-4 transition-transform duration-400 group-hover:translate-y-0">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                        Ver en vivo
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -81,17 +83,26 @@ import SectionHeading from '../ui/SectionHeading.astro';
                         </div>
 
                         <!-- Title + description -->
-                        <h3 class="text-lg font-bold text-white">{project.title}</h3>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <h3 class="text-lg font-bold text-white">{project.title}</h3>
+                            {project.status && (
+                                <span class="rounded-full border border-amber-300/30 bg-amber-300/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-200">
+                                    {project.status}
+                                </span>
+                            )}
+                        </div>
                         <p class="mt-2 text-sm leading-6 text-slate-400">{project.description}</p>
 
                         <!-- View link -->
-                        <a href={project.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all duration-200 hover:text-cyan-300 hover:gap-3">
-                            Ver proyecto
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
+                        {project.href && (
+                            <a href={project.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all duration-200 hover:text-cyan-300 hover:gap-3">
+                                Ver proyecto
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        )}
                     </div>
                 </article>
             ))}
